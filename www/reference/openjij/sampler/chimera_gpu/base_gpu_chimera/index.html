@@ -732,6 +732,11 @@ title="Print to PDF"
 <dd><p>Adjacency structure formatted as a dict, where keys are the nodes of
 the structured sampler and values are sets of all adjacent nodes for each
 key node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[dimod.typing.Variable, Set]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -755,8 +760,13 @@ key node.</p>
 <dt class="sig sig-object py" id="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.structure">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">structure</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Structure</span></span></span><a class="headerlink" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.structure" title="Permalink to this definition">#</a></dt>
 <dd><p>Structure of the structured sampler formatted as a
-<code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code> where the 3-tuple values are the
+<a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.namedtuple" title="(in Python v3.10)"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a> where the 3-tuple values are the
 <a class="reference internal" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.nodelist" title="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.nodelist"><code class="xref py py-attr docutils literal notranslate"><span class="pre">nodelist</span></code></a>, <a class="reference internal" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.edgelist" title="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.edgelist"><code class="xref py py-attr docutils literal notranslate"><span class="pre">edgelist</span></code></a> and <a class="reference internal" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.adjacency" title="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.adjacency"><code class="xref py py-attr docutils literal notranslate"><span class="pre">adjacency</span></code></a> attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>_Structure</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -777,15 +787,18 @@ edges from the sampler’s structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.valid_bqm_graph">
-<span class="sig-name descname"><span class="pre">valid_bqm_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bqm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dimod.BinaryQuadraticModel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.valid_bqm_graph" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">valid_bqm_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bqm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dimod.BinaryQuadraticModel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.valid_bqm_graph" title="Permalink to this definition">#</a></dt>
 <dd><p>Validate that problem defined by <code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.BinaryQuadraticModel</span></code>
 matches the graph provided by the sampler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bqm</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.BinaryQuadraticModel</span></code> object to validate.</p>
+<dd class="field-odd"><p><strong>bqm</strong> (<em>dimod.BinaryQuadraticModel</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.BinaryQuadraticModel</span></code> object to validate.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Boolean indicating validity of BQM graph compared to sampler graph.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>

@@ -763,11 +763,14 @@ title="Print to PDF"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openjij.sampler.sampler.BaseSampler.remove_unknown_kwargs">
-<span class="sig-name descname"><span class="pre">remove_unknown_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openjij.sampler.sampler.BaseSampler.remove_unknown_kwargs" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_unknown_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openjij.sampler.sampler.BaseSampler.remove_unknown_kwargs" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove with warnings any keyword arguments not accepted by the sampler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>**kwargs</strong> – Keyword arguments to be validated.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, Any]</p>
 </dd>
 </dl>
 <p>Returns: Updated <cite>kwargs</cite> dict.</p>
@@ -809,8 +812,8 @@ title="Print to PDF"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>h</strong> (<em>dict</em>) – Linear biases</p></li>
-<li><p><strong>J</strong> (<em>dict</em>) – Quadratic biases</p></li>
+<li><p><strong>h</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – Linear biases</p></li>
+<li><p><strong>J</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – Quadratic biases</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -828,7 +831,7 @@ title="Print to PDF"
 <dd><p>Sample from a QUBO model using the implemented sample method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>Q</strong> (<em>dict</em><em> or </em><em>numpy.ndarray</em>) – Coefficients of a quadratic unconstrained binary optimization</p>
+<dd class="field-odd"><p><strong>Q</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – Coefficients of a quadratic unconstrained binary optimization</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>results</p>
