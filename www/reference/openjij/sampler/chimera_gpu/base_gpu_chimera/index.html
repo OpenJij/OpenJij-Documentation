@@ -56,6 +56,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/reference/openjij/sampler/chimera_gpu/base_gpu_chimera/index.html" />
     <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -112,14 +113,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -714,18 +707,18 @@ title="Print to PDF"
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler" title="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseGPUChimeraSampler</span></code></a></p></td>
-<td><p>Abstract GPUChimera Sampler</p></td>
+<td><p>Abstract GPUChimera Sampler.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openjij.sampler.chimera_gpu.base_gpu_chimera.</span></span><span class="sig-name descname"><span class="pre">BaseGPUChimeraSampler</span></span><a class="reference internal" href="../../../../../_modules/openjij/sampler/chimera_gpu/base_gpu_chimera.html#BaseGPUChimeraSampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/docs_dimod/reference/sampler_composites/api.html#dimod.Structured" title="(in Ocean Documentation v5.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dimod.Structured</span></code></a></p>
-<div class="graphviz"><img src="../../../../../_images/inheritance-8cef8dea4b9d130c8ddb8041686143c172abdfc2.png" alt="Inheritance diagram of openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler" usemap="#inheritance5e1cc7b858" class="inheritance graphviz" /></div>
+<dd><p>Bases: <a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/docs_dimod/reference/sampler_composites/api.html#dimod.Structured" title="(in Ocean Documentation v5.4.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dimod.Structured</span></code></a></p>
+<div class="graphviz"><img src="../../../../../_images/inheritance-e8a588561361cec088abdee62999eb8de060ada8.png" alt="Inheritance diagram of openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler" usemap="#inheritance5e1cc7b858" class="inheritance graphviz" /></div>
 <map id="inheritance5e1cc7b858" name="inheritance5e1cc7b858">
-<area shape="rect" id="node2" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler" target="_top" title="Abstract GPUChimera Sampler" alt="" coords="263,5,453,31"/>
-</map><p>Abstract GPUChimera Sampler</p>
+<area shape="rect" id="node2" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler" target="_top" title="Abstract GPUChimera Sampler." alt="" coords="263,5,453,31"/>
+</map><p>Abstract GPUChimera Sampler.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.adjacency">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adjacency</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">dimod.typing.Variable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Set</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.adjacency" title="Permalink to this definition">#</a></dt>
@@ -787,12 +780,12 @@ edges from the sampler’s structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.valid_bqm_graph">
-<span class="sig-name descname"><span class="pre">valid_bqm_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bqm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/hidden.html#dimod.BinaryQuadraticModel" title="(in Ocean Documentation v5.3.0)"><span class="pre">dimod.BinaryQuadraticModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.valid_bqm_graph" title="Permalink to this definition">#</a></dt>
-<dd><p>Validate that problem defined by <a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/hidden.html#dimod.BinaryQuadraticModel" title="(in Ocean Documentation v5.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.BinaryQuadraticModel</span></code></a>
+<span class="sig-name descname"><span class="pre">valid_bqm_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bqm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dimod.BinaryQuadraticModel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler.valid_bqm_graph" title="Permalink to this definition">#</a></dt>
+<dd><p>Validate that problem defined by <code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.BinaryQuadraticModel</span></code>
 matches the graph provided by the sampler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bqm</strong> (<a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/hidden.html#dimod.BinaryQuadraticModel" title="(in Ocean Documentation v5.3.0)"><em>dimod.BinaryQuadraticModel</em></a>) – <a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/hidden.html#dimod.BinaryQuadraticModel" title="(in Ocean Documentation v5.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.BinaryQuadraticModel</span></code></a> object to validate.</p>
+<dd class="field-odd"><p><strong>bqm</strong> (<em>dimod.BinaryQuadraticModel</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.BinaryQuadraticModel</span></code> object to validate.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Boolean indicating validity of BQM graph compared to sampler graph.</p>

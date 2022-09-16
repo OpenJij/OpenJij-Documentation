@@ -84,7 +84,9 @@ Attributes
    .. autoapi-inheritance-diagram:: openjij.CSQASampler
       :parts: 1
 
-   Sampler with continuous-time simulated quantum annealing (CSQA) using Hamiltonian
+   Sampler with continuous-time simulated quantum annealing (CSQA) using
+
+   Hamiltonian.
 
    .. math::
 
@@ -93,21 +95,21 @@ Attributes
    where :math:`H_p` is the problem Hamiltonian we want to solve.
 
    :param beta: Inverse temperature.
-   :type beta: float
+   :type beta: :class:`float`
    :param gamma: Amplitude of quantum fluctuation.
-   :type gamma: float
+   :type gamma: :class:`float`
    :param schedule: schedule list
-   :type schedule: list
+   :type schedule: :class:`list`
    :param step_num: Number of Monte Carlo step.
-   :type step_num: int
+   :type step_num: :class:`int`
    :param schedule_info: Information about a annealing schedule.
-   :type schedule_info: dict
+   :type schedule_info: :class:`dict`
    :param num_reads: Number of iterations.
-   :type num_reads: int
+   :type num_reads: :class:`int`
    :param num_sweeps: number of sweeps
-   :type num_sweeps: int
+   :type num_sweeps: :class:`int`
    :param schedule_info: Information about a annealing schedule.
-   :type schedule_info: dict
+   :type schedule_info: :class:`dict`
 
    .. py:attribute:: properties
       
@@ -145,30 +147,30 @@ Attributes
 
    .. py:method:: sample(bqm: Union[openjij.model.model.BinaryQuadraticModel, dimod.BinaryQuadraticModel], beta: Optional[float] = None, gamma: Optional[float] = None, num_sweeps: Optional[int] = None, schedule: Optional[list] = None, trotter: Optional[int] = None, num_reads: Optional[int] = None, initial_state: Optional[Union[list, dict]] = None, updater: Optional[str] = None, sparse: Optional[bool] = None, reinitialize_state: Optional[bool] = None, seed: Optional[int] = None) -> openjij.sampler.response.Response
 
-      Sampling from the Ising model
+      Sampling from the Ising model.
 
       :param bqm:
-      :type bqm: openjij.BinaryQuadraticModel
+      :type bqm: :class:`openjij.BinaryQuadraticModel`
       :param beta: inverse tempareture.
-      :type beta: float, optional
+      :type beta: :class:`float, optional`
       :param gamma: strangth of transverse field. Defaults to None.
-      :type gamma: float, optional
+      :type gamma: :class:`float, optional`
       :param num_sweeps: number of sweeps. Defaults to None.
-      :type num_sweeps: int, optional
+      :type num_sweeps: :class:`int, optional`
       :param schedule: List of annealing parameter. Defaults to None.
-      :type schedule: list[list[float, int]], optional
+      :type schedule: :class:`list[list[float, int]], optional`
       :param trotter: Trotter number.
-      :type trotter: int
+      :type trotter: :class:`int`
       :param num_reads: number of sampling. Defaults to 1.
-      :type num_reads: int, optional
+      :type num_reads: :class:`int, optional`
       :param initial_state: Initial state. Defaults to None.
-      :type initial_state: list[int], optional
+      :type initial_state: :class:`list[int], optional`
       :param updater: update method. Defaults to 'single spin flip'.
-      :type updater: str, optional
+      :type updater: :class:`str, optional`
       :param reinitialize_state: Re-initilization at each sampling. Defaults to True.
-      :type reinitialize_state: bool, optional
+      :type reinitialize_state: :class:`bool, optional`
       :param seed: Sampling seed. Defaults to None.
-      :type seed: int, optional
+      :type seed: :class:`int, optional`
 
       :raises ValueError:
 
@@ -196,27 +198,27 @@ Attributes
       Sampling from the Ising model.
 
       :param h: linear biases
-      :type h: dict
+      :type h: :class:`dict`
       :param J: quadratic biases
-      :type J: dict
+      :type J: :class:`dict`
       :param beta: inverse temperature
-      :type beta: float, optional
+      :type beta: :class:`float, optional`
       :param gamma: strength of transverse field
-      :type gamma: float, optional
+      :type gamma: :class:`float, optional`
       :param num_sweeps: number of sampling.
-      :type num_sweeps: int, optional
+      :type num_sweeps: :class:`int, optional`
       :param schedule: schedule list
-      :type schedule: list, optional
+      :type schedule: :class:`list, optional`
       :param num_reads: number of iterations
-      :type num_reads: int, optional
+      :type num_reads: :class:`int, optional`
       :param initial_state: initial state of spins
-      :type initial_state: optional
+      :type initial_state: :class:`optional`
       :param updater: updater algorithm
-      :type updater: str, optional
+      :type updater: :class:`str, optional`
       :param reinitialize_state: Re-initilization at each sampling. Defaults to True.
-      :type reinitialize_state: bool, optional
+      :type reinitialize_state: :class:`bool, optional`
       :param seed: Sampling seed.
-      :type seed: int, optional
+      :type seed: :class:`int, optional`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -242,7 +244,7 @@ Attributes
       Sample from a QUBO model using the implemented sample method.
 
       :param Q: Coefficients of a quadratic unconstrained binary optimization
-      :type Q: dict or numpy.ndarray
+      :type Q: :class:`dict or numpy.ndarray`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -261,17 +263,17 @@ Attributes
    :param record: A NumPy record array. Must have 'sample', 'energy' and 'num_occurrences' as fields.
                   The 'sample' field should be a 2D NumPy array where each row is a sample and each
                   column represents the value of a variable.
-   :type record: :obj:`numpy.recarray`
+   :type record: :class:`:obj:`numpy.recarray``
    :param variables: An iterable of variable labels, corresponding to columns in `record.samples`.
-   :type variables: iterable
+   :type variables: :class:`iterable`
    :param info: Information about the :class:`SampleSet` as a whole, formatted as a dict.
-   :type info: dict
+   :type info: :class:`dict`
    :param vartype: Variable type for the :class:`SampleSet`. Accepted input values:
 
                    * :class:`.Vartype.SPIN`, ``'SPIN'``, ``{-1, 1}``
                    * :class:`.Vartype.BINARY`, ``'BINARY'``, ``{0, 1}``
                    * :class:`.ExtendedVartype.DISCRETE`, ``'DISCRETE'``
-   :type vartype: :class:`.Vartype`/str/set
+   :type vartype: :class:`:class:`.Vartype`/str/set`
 
    .. rubric:: Examples
 
@@ -330,12 +332,12 @@ Attributes
 
                       * :class:`.Vartype.SPIN`, ``'SPIN'``, ``{-1, 1}``
                       * :class:`.Vartype.BINARY`, ``'BINARY'``, ``{0, 1}``
-      :type vartype: :class:`.Vartype`/str/set
+      :type vartype: :class:`:class:`.Vartype`/str/set`
       :param energy_offset: Constant value applied to the 'energy' field of :attr:`SampleSet.record`.
-      :type energy_offset: number, optional, defaul=0.0
+      :type energy_offset: :class:`number, optional, defaul=0.0`
       :param inplace: If True, the instantiated :class:`SampleSet` is updated; otherwise, a new
                       :class:`SampleSet` is returned.
-      :type inplace: bool, optional, default=True
+      :type inplace: :class:`bool, optional, default=True`
 
       :returns: SampleSet with changed vartype. If `inplace` is True, returns itself.
       :rtype: :obj:`.SampleSet`
@@ -368,23 +370,23 @@ Attributes
 
       :param fields: If specified, only these fields are included in the yielded tuples.
                      The special field name 'sample' can be used to view the samples.
-      :type fields: list, optional, default=None
+      :type fields: :class:`list, optional, default=None`
       :param sorted_by: Selects the record field used to sort the samples. If None, the samples are yielded
                         in record order.
-      :type sorted_by: str/None, optional, default='energy'
+      :type sorted_by: :class:`str/None, optional, default='energy'`
       :param name: Name of the yielded namedtuples or None to yield regular tuples.
-      :type name: str/None, optional, default='Sample'
+      :type name: :class:`str/None, optional, default='Sample'`
       :param reverse: If True, yield in reverse order.
-      :type reverse: bool, optional, default=False
+      :type reverse: :class:`bool, optional, default=False`
       :param sample_dict_cast: Samples are returned as dicts rather than
                                :class:`.SampleView`, which requires heavy memory
                                usage. Set to False to reduce load on memory.
-      :type sample_dict_cast: bool, optional, default=True
+      :type sample_dict_cast: :class:`bool, optional, default=True`
       :param index: If True, `datum.idx` gives the corresponding index of the
                     :attr:`.SampleSet.record`.
-      :type index: bool, optional, default=False
+      :type index: :class:`bool, optional, default=False`
 
-      :Yields: *namedtuple/tuple* -- The data in the :class:`SampleSet`, in the order specified by the input
+      :Yields: :class:`namedtuple/tuple` -- The data in the :class:`SampleSet`, in the order specified by the input
                `fields`.
 
       .. rubric:: Examples
@@ -507,7 +509,7 @@ Attributes
       :param future: Object that contains or will contain the information needed to construct a
                      :class:`SampleSet`. If `future` has a :meth:`~concurrent.futures.Future.done` method,
                      this determines the value returned by :meth:`.SampleSet.done`.
-      :type future: object
+      :type future: :class:`object`
       :param result_hook: A function that is called to resolve the future. Must accept the future and return
                           a :obj:`.SampleSet`. If not provided, set to
 
@@ -515,7 +517,7 @@ Attributes
 
                               def result_hook(future):
                                   return future.result()
-      :type result_hook: callable, optional
+      :type result_hook: :class:`callable, optional`
 
       :returns: :obj:`.SampleSet`
 
@@ -548,22 +550,22 @@ Attributes
                       * :class:`.Vartype.SPIN`, ``'SPIN'``, ``{-1, 1}``
                       * :class:`.Vartype.BINARY`, ``'BINARY'``, ``{0, 1}``
                       * :class:`.ExtendedVartype.DISCRETE`, ``'DISCRETE'``
-      :type vartype: :class:`.Vartype`/str/set
+      :type vartype: :class:`:class:`.Vartype`/str/set`
       :param energy: Vector of energies.
-      :type energy: array_like
+      :type energy: :class:`array_like`
       :param info: Information about the :class:`SampleSet` as a whole formatted as a dict.
-      :type info: dict, optional
+      :type info: :class:`dict, optional`
       :param num_occurrences: Number of occurrences for each sample. If not provided, defaults to a vector of 1s.
-      :type num_occurrences: array_like, optional
+      :type num_occurrences: :class:`array_like, optional`
       :param aggregate_samples: If True, all samples in returned :obj:`.SampleSet` are unique,
                                 with `num_occurrences` accounting for any duplicate samples in
                                 `samples_like`.
-      :type aggregate_samples: bool, optional, default=False
+      :type aggregate_samples: :class:`bool, optional, default=False`
       :param sort_labels: Return :attr:`.SampleSet.variables` in sorted order. For mixed
                           (unsortable) types, the given order is maintained.
-      :type sort_labels: bool, optional, default=True
+      :type sort_labels: :class:`bool, optional, default=True`
       :param \*\*vectors: Other per-sample data.
-      :type \*\*vectors: array_like
+      :type \*\*vectors: :class:`array_like`
 
       :returns: :obj:`.SampleSet`
 
@@ -592,20 +594,20 @@ Attributes
       :param samples_like: A collection of raw samples. 'samples_like' is an extension of NumPy's array_like.
                            See :func:`.as_samples`.
       :param bqm: A binary quadratic model.
-      :type bqm: :obj:`.BinaryQuadraticModel`
+      :type bqm: :class:`:obj:`.BinaryQuadraticModel``
       :param info: Information about the :class:`SampleSet` as a whole formatted as a dict.
-      :type info: dict, optional
+      :type info: :class:`dict, optional`
       :param num_occurrences: Number of occurrences for each sample. If not provided, defaults to a vector of 1s.
-      :type num_occurrences: array_like, optional
+      :type num_occurrences: :class:`array_like, optional`
       :param aggregate_samples: If True, all samples in returned :obj:`.SampleSet` are unique,
                                 with `num_occurrences` accounting for any duplicate samples in
                                 `samples_like`.
-      :type aggregate_samples: bool, optional, default=False
+      :type aggregate_samples: :class:`bool, optional, default=False`
       :param sort_labels: Return :attr:`.SampleSet.variables` in sorted order. For mixed
                           (unsortable) types, the given order is maintained.
-      :type sort_labels: bool, optional, default=True
+      :type sort_labels: :class:`bool, optional, default=True`
       :param \*\*vectors: Other per-sample data.
-      :type \*\*vectors: array_like
+      :type \*\*vectors: :class:`array_like`
 
       :returns: :obj:`.SampleSet`
 
@@ -625,26 +627,26 @@ Attributes
       :param samples_like: A collection of raw samples. 'samples_like' is an extension of NumPy's array_like.
                            See :func:`.as_samples`.
       :param cqm: A constrained quadratic model.
-      :type cqm: :obj:`.ConstrainedQuadraticModel`
+      :type cqm: :class:`:obj:`.ConstrainedQuadraticModel``
       :param rtol: Relative tolerance for constraint violation.
                    See :meth:`.ConstrainedQuadraticModel.check_feasible` for more information.
-      :type rtol: float, optional, default=1e-6
+      :type rtol: :class:`float, optional, default=1e-6`
       :param atol: Absolute tolerance for constraint violations.
                    See :meth:`.ConstrainedQuadraticModel.check_feasible` for more information.
-      :type atol: float, optional, default=1e-8
+      :type atol: :class:`float, optional, default=1e-8`
       :param info: Information about the :class:`SampleSet` as a whole formatted as a dict.
-      :type info: dict, optional
+      :type info: :class:`dict, optional`
       :param num_occurrences: Number of occurrences for each sample. If not provided, defaults to a vector of 1s.
-      :type num_occurrences: array_like, optional
+      :type num_occurrences: :class:`array_like, optional`
       :param aggregate_samples: If True, all samples in returned :obj:`.SampleSet` are unique,
                                 with `num_occurrences` accounting for any duplicate samples in
                                 `samples_like`.
-      :type aggregate_samples: bool, optional, default=False
+      :type aggregate_samples: :class:`bool, optional, default=False`
       :param sort_labels: Return :attr:`.SampleSet.variables` in sorted order. For mixed
                           (unsortable) types, the given order is maintained.
-      :type sort_labels: bool, optional, default=True
+      :type sort_labels: :class:`bool, optional, default=True`
       :param \*\*vectors: Other per-sample data.
-      :type \*\*vectors: array_like
+      :type \*\*vectors: :class:`array_like`
 
       :returns: :obj:`.SampleSet`
 
@@ -663,7 +665,7 @@ Attributes
       Deserialize a :class:`SampleSet`.
 
       :param obj: A :class:`SampleSet` serialized by :meth:`~.SampleSet.to_serializable`.
-      :type obj: dict
+      :type obj: :class:`dict`
 
       :returns: :obj:`.SampleSet`
 
@@ -718,9 +720,9 @@ Attributes
       See :func:`numpy.isclose` for additional details and caveats.
 
       :param rtol: The relative tolerance (see above).
-      :type rtol: float, optional, default=1.e-5
+      :type rtol: :class:`float, optional, default=1.e-5`
       :param atol: The absolute tolerance (see above).
-      :type atol: float, optional, default=1.e-8
+      :type atol: :class:`float, optional, default=1.e-8`
 
       :returns: A new sample set containing the lowest energy
                 samples as delimited by configured tolerances from the lowest energy
@@ -776,10 +778,10 @@ Attributes
 
       :param mapping: Mapping from current variable labels to new, as a dict. If incomplete mapping is
                       specified, unmapped variables keep their current labels.
-      :type mapping: dict
+      :type mapping: :class:`dict`
       :param inplace: If True, the current :class:`SampleSet` is updated; otherwise, a new
                       :class:`SampleSet` is returned.
-      :type inplace: bool, optional, default=True
+      :type inplace: :class:`bool, optional, default=True`
 
       :returns: SampleSet with relabeled variables. If `inplace` is True, returns
                 itself.
@@ -811,10 +813,10 @@ Attributes
       Return an iterable over the samples.
 
       :param n: Maximum number of samples to return in the view.
-      :type n: int, optional, default=None
+      :type n: :class:`int, optional, default=None`
       :param sorted_by: Selects the record field used to sort the samples. If None,
                         samples are returned in record order.
-      :type sorted_by: str/None, optional, default='energy'
+      :type sorted_by: :class:`str/None, optional, default='energy'`
 
       :returns: A view object mapping variable labels to
                 values.
@@ -852,15 +854,15 @@ Attributes
       slicing syntax.
 
       :param start: Start index for `slice`.
-      :type start: int, optional, default=None
+      :type start: :class:`int, optional, default=None`
       :param stop: Stop index for `slice`.
-      :type stop: int
+      :type stop: :class:`int`
       :param step: Step value for `slice`.
-      :type step: int, optional, default=None
+      :type step: :class:`int, optional, default=None`
       :param sorted_by: Selects the record field used to sort the samples before
                         slicing. Note that `sorted_by` determines the sample order in
                         the returned sample set.
-      :type sorted_by: str/None, optional, default='energy'
+      :type sorted_by: :class:`str/None, optional, default='energy'`
 
       :returns: :obj:`.SampleSet`
 
@@ -921,7 +923,7 @@ Attributes
 
       :param sample_column: If True, samples are
                             represented as a column of type dict.
-      :type sample_column: bool, optional, default=False
+      :type sample_column: :class:`bool, optional, default=False`
 
       :returns: :obj:`pandas.DataFrame`.
 
@@ -953,16 +955,16 @@ Attributes
       to be serializable.
 
       :param use_bytes: If True, a compact representation of the biases as bytes is used.
-      :type use_bytes: bool, optional, default=False
+      :type use_bytes: :class:`bool, optional, default=False`
       :param bytes_type: If `use_bytes` is True, this class is used to wrap the bytes
                          objects in the serialization. Useful for Python 2 using BSON
                          encoding, which does not accept the raw `bytes` type;
                          `bson.Binary` can be used instead.
-      :type bytes_type: class, optional, default=bytes
+      :type bytes_type: :class:`class, optional, default=bytes`
       :param pack_samples: Pack the samples using 1 bit per sample. Samples are never
                            packed when :attr:`SampleSet.vartype` is
                            `~ExtendedVartype.DISCRETE`.
-      :type pack_samples: bool, optional, default=True
+      :type pack_samples: :class:`bool, optional, default=True`
 
       :returns: Object that can be serialized.
       :rtype: dict
@@ -985,11 +987,11 @@ Attributes
 
       :param n: Maximum number of rows in the returned sample set. Does not return
                 any rows above this limit in the original sample set.
-      :type n: int
+      :type n: :class:`int`
       :param sorted_by: Selects the record field used to sort the samples before
                         truncating. Note that this sort order is maintained in the
                         returned sample set.
-      :type sorted_by: str/None, optional, default='energy'
+      :type sorted_by: :class:`str/None, optional, default='energy'`
 
       :returns: :obj:`.SampleSet`
 
@@ -1043,18 +1045,18 @@ Attributes
 
    :param beta_min: Minmum beta (inverse temperature).
                     You can overwrite in methods .sample_*.
-   :type beta_min: float
+   :type beta_min: :class:`float`
    :param beta_max: Maximum beta (inverse temperature).
                     You can overwrite in methods .sample_*.
-   :type beta_max: float
+   :type beta_max: :class:`float`
    :param num_reads: number of sampling (algorithm) runs. defaults None.
                      You can overwrite in methods .sample_*.
-   :type num_reads: int
+   :type num_reads: :class:`int`
    :param num_sweeps: number of MonteCarlo steps during SA. defaults None.
                       You can overwrite in methods .sample_*.
-   :type num_sweeps: int
+   :type num_sweeps: :class:`int`
    :param schedule_info: Information about an annealing schedule.
-   :type schedule_info: dict
+   :type schedule_info: :class:`dict`
 
    :raises ValueError: If schedules or variables violate as below.
    :raises - not list or numpy.array.:
@@ -1097,28 +1099,28 @@ Attributes
 
    .. py:method:: sample(bqm: Union[openj.model.model.BinaryQuadraticModel, dimod.BinaryQuadraticModel], beta_min: Optional[float] = None, beta_max: Optional[float] = None, num_sweeps: Optional[int] = None, num_reads: Optional[int] = None, schedule: Optional[list] = None, initial_state: Optional[Union[list, dict]] = None, updater: Optional[str] = None, sparse: Optional[bool] = None, reinitialize_state: Optional[bool] = None, seed: Optional[int] = None) -> openjij.sampler.response.Response
 
-      sample Ising model.
+      Sample Ising model.
 
       :param bqm:
-      :type bqm: openjij.model.model.BinaryQuadraticModel
+      :type bqm: :class:`openjij.model.model.BinaryQuadraticModel`
       :param beta_min: minimal value of inverse temperature
-      :type beta_min: float
+      :type beta_min: :class:`float`
       :param beta_max: maximum value of inverse temperature
-      :type beta_max: float
+      :type beta_max: :class:`float`
       :param num_sweeps: number of sweeps
-      :type num_sweeps: int
+      :type num_sweeps: :class:`int`
       :param num_reads: number of reads
-      :type num_reads: int
+      :type num_reads: :class:`int`
       :param schedule: list of inverse temperature
-      :type schedule: list
+      :type schedule: :class:`list`
       :param initial_state: initial state
-      :type initial_state: dict
+      :type initial_state: :class:`dict`
       :param updater: updater algorithm
-      :type updater: str
+      :type updater: :class:`str`
       :param reinitialize_state: if true reinitialize state for each run
-      :type reinitialize_state: bool
+      :type reinitialize_state: :class:`bool`
       :param seed: seed for Monte Carlo algorithm
-      :type seed: int
+      :type seed: :class:`int`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -1141,28 +1143,28 @@ Attributes
 
    .. py:method:: sample_hubo(J: Union[dict, openj.model.model.BinaryPolynomialModel, cimod.BinaryPolynomialModel], vartype: Optional[str] = None, beta_min: Optional[float] = None, beta_max: Optional[float] = None, num_sweeps: Optional[int] = None, num_reads: Optional[int] = None, schedule: Optional[list] = None, initial_state: Optional[Union[list, dict]] = None, updater: Optional[str] = None, reinitialize_state: Optional[bool] = None, seed: Optional[int] = None) -> openjij.sampler.response.Response
 
-      sampling from higher order unconstrainted binary optimization.
+      Sampling from higher order unconstrainted binary optimization.
 
       :param J: Interactions.
-      :type J: dict
+      :type J: :class:`dict`
       :param vartype: "SPIN" or "BINARY".
-      :type vartype: str, openjij.VarType
+      :type vartype: :class:`str, openjij.VarType`
       :param beta_min: Minimum beta (initial inverse temperature). Defaults to None.
-      :type beta_min: float, optional
+      :type beta_min: :class:`float, optional`
       :param beta_max: Maximum beta (final inverse temperature). Defaults to None.
-      :type beta_max: float, optional
+      :type beta_max: :class:`float, optional`
       :param schedule: schedule list. Defaults to None.
-      :type schedule: list, optional
+      :type schedule: :class:`list, optional`
       :param num_sweeps: number of sweeps. Defaults to None.
-      :type num_sweeps: int, optional
+      :type num_sweeps: :class:`int, optional`
       :param num_reads: number of reads. Defaults to 1.
-      :type num_reads: int, optional
+      :type num_reads: :class:`int, optional`
       :param init_state: initial state. Defaults to None.
-      :type init_state: list, optional
+      :type init_state: :class:`list, optional`
       :param reinitialize_state: if true reinitialize state for each run
-      :type reinitialize_state: bool
+      :type reinitialize_state: :class:`bool`
       :param seed: seed for Monte Carlo algorithm. Defaults to None.
-      :type seed: int, optional
+      :type seed: :class:`int, optional`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -1184,9 +1186,9 @@ Attributes
       Sample from an Ising model using the implemented sample method.
 
       :param h: Linear biases
-      :type h: dict
+      :type h: :class:`dict`
       :param J: Quadratic biases
-      :type J: dict
+      :type J: :class:`dict`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -1197,7 +1199,7 @@ Attributes
       Sample from a QUBO model using the implemented sample method.
 
       :param Q: Coefficients of a quadratic unconstrained binary optimization
-      :type Q: dict or numpy.ndarray
+      :type Q: :class:`dict or numpy.ndarray`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -1223,19 +1225,19 @@ Attributes
    where :math:`H_p` is the problem Hamiltonian we want to solve.
 
    :param beta: Inverse temperature.
-   :type beta: float
+   :type beta: :class:`float`
    :param gamma: Amplitude of quantum fluctuation.
-   :type gamma: float
+   :type gamma: :class:`float`
    :param trotter: Trotter number.
-   :type trotter: int
+   :type trotter: :class:`int`
    :param num_sweeps: number of sweeps
-   :type num_sweeps: int
+   :type num_sweeps: :class:`int`
    :param schedule: schedule list
-   :type schedule: list
+   :type schedule: :class:`list`
    :param num_reads: Number of iterations.
-   :type num_reads: int
+   :type num_reads: :class:`int`
    :param schedule_info: Information about a annealing schedule.
-   :type schedule_info: dict
+   :type schedule_info: :class:`dict`
 
    :raises ValueError: If the schedule violates as below.
    :raises - not list or numpy.array.:
@@ -1277,30 +1279,30 @@ Attributes
 
    .. py:method:: sample(bqm: Union[openjij.model.model.BinaryQuadraticModel, dimod.BinaryQuadraticModel], beta: Optional[float] = None, gamma: Optional[float] = None, num_sweeps: Optional[int] = None, schedule: Optional[list] = None, trotter: Optional[int] = None, num_reads: Optional[int] = None, initial_state: Optional[Union[list, dict]] = None, updater: Optional[str] = None, sparse: Optional[bool] = None, reinitialize_state: Optional[bool] = None, seed: Optional[int] = None) -> openjij.sampler.response.Response
 
-      Sampling from the Ising model
+      Sampling from the Ising model.
 
       :param bqm:
-      :type bqm: openjij.BinaryQuadraticModel
+      :type bqm: :class:`openjij.BinaryQuadraticModel`
       :param beta: inverse tempareture.
-      :type beta: float, optional
+      :type beta: :class:`float, optional`
       :param gamma: strangth of transverse field. Defaults to None.
-      :type gamma: float, optional
+      :type gamma: :class:`float, optional`
       :param num_sweeps: number of sweeps. Defaults to None.
-      :type num_sweeps: int, optional
+      :type num_sweeps: :class:`int, optional`
       :param schedule: List of annealing parameter. Defaults to None.
-      :type schedule: list[list[float, int]], optional
+      :type schedule: :class:`list[list[float, int]], optional`
       :param trotter: Trotter number.
-      :type trotter: int
+      :type trotter: :class:`int`
       :param num_reads: number of sampling. Defaults to 1.
-      :type num_reads: int, optional
+      :type num_reads: :class:`int, optional`
       :param initial_state: Initial state. Defaults to None.
-      :type initial_state: list[int], optional
+      :type initial_state: :class:`list[int], optional`
       :param updater: update method. Defaults to 'single spin flip'.
-      :type updater: str, optional
+      :type updater: :class:`str, optional`
       :param reinitialize_state: Re-initilization at each sampling. Defaults to True.
-      :type reinitialize_state: bool, optional
+      :type reinitialize_state: :class:`bool, optional`
       :param seed: Sampling seed. Defaults to None.
-      :type seed: int, optional
+      :type seed: :class:`int, optional`
 
       :raises ValueError:
 
@@ -1328,9 +1330,9 @@ Attributes
       Sample from an Ising model using the implemented sample method.
 
       :param h: Linear biases
-      :type h: dict
+      :type h: :class:`dict`
       :param J: Quadratic biases
-      :type J: dict
+      :type J: :class:`dict`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -1341,7 +1343,7 @@ Attributes
       Sample from a QUBO model using the implemented sample method.
 
       :param Q: Coefficients of a quadratic unconstrained binary optimization
-      :type Q: dict or numpy.ndarray
+      :type Q: :class:`dict or numpy.ndarray`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -1353,54 +1355,54 @@ Attributes
 
 .. py:function:: BinaryQuadraticModel(linear, quadratic, *args, **kwargs)
 
-   generate BinaryQuadraticModel object.
+   Generate BinaryQuadraticModel object.
 
    .. attribute:: vartype
 
       variable type SPIN or BINARY
 
-      :type: dimod.Vartype
+      :type: :class:`dimod.Vartype`
 
    .. attribute:: linear
 
       represents linear term
 
-      :type: dict
+      :type: :class:`dict`
 
    .. attribute:: quadratic
 
       represents quadratic term
 
-      :type: dict
+      :type: :class:`dict`
 
    .. attribute:: offset
 
       represents constant energy term when convert to SPIN from BINARY
 
-      :type: float
+      :type: :class:`float`
 
    .. attribute:: num_variables
 
       represents number of variables in the model
 
-      :type: int
+      :type: :class:`int`
 
    .. attribute:: variables
 
       represents variables of the binary quadratic model
 
-      :type: list
+      :type: :class:`list`
 
    :param linear: linear biases
-   :type linear: dict
+   :type linear: :class:`dict`
    :param quadratic: quadratic biases
-   :type quadratic: dict
+   :type quadratic: :class:`dict`
    :param offset: offset
-   :type offset: float
+   :type offset: :class:`float`
    :param vartype: vartype ('SPIN' or 'BINARY')
-   :type vartype: openjij.variable_type.Vartype
+   :type vartype: :class:`openjij.variable_type.Vartype`
    :param gpu: if true, this can be used for gpu samplers.
-   :type gpu: bool
+   :type gpu: :class:`bool`
    :param kwargs:
 
    :returns: generated BinaryQuadraticModel
@@ -1429,20 +1431,21 @@ Attributes
 .. py:function:: solver_benchmark(solver, time_list, solutions=[], args={}, p_r=0.99, ref_energy=0, measure_with_energy=False, time_name='execution_time')
 
    Calculate 'success probability', 'TTS', 'Residual energy','Standard Error' with computation time
+
    :param solver: returns openjij.Response, and solver has arguments 'time' and '**args'
-   :type solver: callable
+   :type solver: :class:`callable`
    :param time_list:
-   :type time_list: list
+   :type time_list: :class:`list`
    :param solutions: true solution or list of solution (if solutions are degenerated).
-   :type solutions: list(list(int)), list(int)
+   :type solutions: :class:`list(list(int)), list(int)`
    :param args: Arguments for solver.
-   :type args: dict
+   :type args: :class:`dict`
    :param p_r: Thereshold probability for time to solutions.
-   :type p_r: float
+   :type p_r: :class:`float`
    :param ref_energy: The ground (reference to calculate success probability and the residual energy) energy.
-   :type ref_energy: float
+   :type ref_energy: :class:`float`
    :param measure_with_energy: use a energy as measure for success
-   :type measure_with_energy: bool
+   :type measure_with_energy: :class:`bool`
 
    :returns: dictionary which has the following keys:
 

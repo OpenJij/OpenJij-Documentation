@@ -56,6 +56,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/reference/openjij/sampler/sampler/index.html" />
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -112,14 +113,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -725,7 +718,7 @@ title="Print to PDF"
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#openjij.sampler.sampler.BaseSampler" title="openjij.sampler.sampler.BaseSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseSampler</span></code></a></p></td>
-<td><p>Base sampler class of python wrapper for cxxjij simulator</p></td>
+<td><p>Base sampler class of python wrapper for cxxjij simulator.</p></td>
 </tr>
 </tbody>
 </table>
@@ -746,11 +739,11 @@ title="Print to PDF"
 <dl class="py class">
 <dt class="sig sig-object py" id="openjij.sampler.sampler.BaseSampler">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openjij.sampler.sampler.</span></span><span class="sig-name descname"><span class="pre">BaseSampler</span></span><a class="reference internal" href="../../../../_modules/openjij/sampler/sampler.html#BaseSampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.sampler.sampler.BaseSampler" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/docs_dimod/reference/sampler_composites/api.html#dimod.Sampler" title="(in Ocean Documentation v5.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dimod.Sampler</span></code></a></p>
-<div class="graphviz"><img src="../../../../_images/inheritance-c72625bf2e7f58fe7096e11264c27fc3c8ec19ca.png" alt="Inheritance diagram of openjij.sampler.sampler.BaseSampler" usemap="#inheritancefcf27d6970" class="inheritance graphviz" /></div>
+<dd><p>Bases: <a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/docs_dimod/reference/sampler_composites/api.html#dimod.Sampler" title="(in Ocean Documentation v5.4.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dimod.Sampler</span></code></a></p>
+<div class="graphviz"><img src="../../../../_images/inheritance-3619f31394623c6b653ff8d97e73aef9ac862518.png" alt="Inheritance diagram of openjij.sampler.sampler.BaseSampler" usemap="#inheritancefcf27d6970" class="inheritance graphviz" /></div>
 <map id="inheritancefcf27d6970" name="inheritancefcf27d6970">
-<area shape="rect" id="node1" href="#openjij.sampler.sampler.BaseSampler" target="_top" title="Base sampler class of python wrapper for cxxjij simulator" alt="" coords="129,5,237,31"/>
-</map><p>Base sampler class of python wrapper for cxxjij simulator</p>
+<area shape="rect" id="node1" href="#openjij.sampler.sampler.BaseSampler" target="_top" title="Base sampler class of python wrapper for cxxjij simulator." alt="" coords="129,5,237,31"/>
+</map><p>Base sampler class of python wrapper for cxxjij simulator.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="openjij.sampler.sampler.BaseSampler.parameters">
 <span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#openjij.sampler.sampler.BaseSampler.parameters" title="Permalink to this definition">#</a></dt>
@@ -791,16 +784,19 @@ title="Print to PDF"
 <dl class="py method">
 <dt class="sig sig-object py" id="openjij.sampler.sampler.BaseSampler.sample">
 <span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bqm</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/openjij/sampler/sampler.html#BaseSampler.sample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.sampler.sampler.BaseSampler.sample" title="Permalink to this definition">#</a></dt>
-<dd><p>Sample from a binary quadratic model.
-:param bqm: Binary Qudratic Model
-:type bqm: openjij.BinaryQuadraticModel
-:param **parameters: See the implemented sampling for additional keyword definitions.</p>
+<dd><p>Sample from a binary quadratic model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>results</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bqm</strong> (<a class="reference internal" href="../../index.html#openjij.BinaryQuadraticModel" title="openjij.BinaryQuadraticModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.BinaryQuadraticModel</span></code></a>) – Binary Qudratic Model</p></li>
+<li><p><strong>**parameters</strong> – See the implemented sampling for additional keyword definitions.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="../response/index.html#openjij.sampler.response.Response" title="openjij.sampler.response.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.sampler.response.Response</span></code></a></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../response/index.html#openjij.sampler.response.Response" title="openjij.sampler.response.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.sampler.response.Response</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -812,8 +808,8 @@ title="Print to PDF"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>h</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – Linear biases</p></li>
-<li><p><strong>J</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – Quadratic biases</p></li>
+<li><p><strong>h</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Linear biases</p></li>
+<li><p><strong>J</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Quadratic biases</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -831,7 +827,7 @@ title="Print to PDF"
 <dd><p>Sample from a QUBO model using the implemented sample method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>Q</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – Coefficients of a quadratic unconstrained binary optimization</p>
+<dd class="field-odd"><p><strong>Q</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span> <span class="pre">or</span> <span class="pre">numpy.ndarray</span></code>) – Coefficients of a quadratic unconstrained binary optimization</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>results</p>

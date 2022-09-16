@@ -103,54 +103,54 @@ Attributes
 
 .. py:function:: BinaryQuadraticModel(linear, quadratic, *args, **kwargs)
 
-   generate BinaryQuadraticModel object.
+   Generate BinaryQuadraticModel object.
 
    .. attribute:: vartype
 
       variable type SPIN or BINARY
 
-      :type: dimod.Vartype
+      :type: :class:`dimod.Vartype`
 
    .. attribute:: linear
 
       represents linear term
 
-      :type: dict
+      :type: :class:`dict`
 
    .. attribute:: quadratic
 
       represents quadratic term
 
-      :type: dict
+      :type: :class:`dict`
 
    .. attribute:: offset
 
       represents constant energy term when convert to SPIN from BINARY
 
-      :type: float
+      :type: :class:`float`
 
    .. attribute:: num_variables
 
       represents number of variables in the model
 
-      :type: int
+      :type: :class:`int`
 
    .. attribute:: variables
 
       represents variables of the binary quadratic model
 
-      :type: list
+      :type: :class:`list`
 
    :param linear: linear biases
-   :type linear: dict
+   :type linear: :class:`dict`
    :param quadratic: quadratic biases
-   :type quadratic: dict
+   :type quadratic: :class:`dict`
    :param offset: offset
-   :type offset: float
+   :type offset: :class:`float`
    :param vartype: vartype ('SPIN' or 'BINARY')
-   :type vartype: openjij.variable_type.Vartype
+   :type vartype: :class:`openjij.variable_type.Vartype`
    :param gpu: if true, this can be used for gpu samplers.
-   :type gpu: bool
+   :type gpu: :class:`bool`
    :param kwargs:
 
    :returns: generated BinaryQuadraticModel
@@ -194,7 +194,7 @@ Attributes
 
 .. py:function:: make_BinaryQuadraticModel_from_JSON(obj: dict)
 
-   make BinaryQuadraticModel from JSON.
+   Make BinaryQuadraticModel from JSON.
 
    :returns: corresponding BinaryQuadraticModel type
 

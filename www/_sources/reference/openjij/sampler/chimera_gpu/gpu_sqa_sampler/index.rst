@@ -29,19 +29,19 @@ Classes
    Inherits from :class:`openjij.sampler.sqa_sampler.SQASampler`.
 
    :param beta: Inverse temperature.
-   :type beta: float
+   :type beta: :class:`float`
    :param gamma: Amplitude of quantum fluctuation.
-   :type gamma: float
+   :type gamma: :class:`float`
    :param trotter: Trotter number.
-   :type trotter: int
+   :type trotter: :class:`int`
    :param num_sweeps: number of sweeps
-   :type num_sweeps: int
+   :type num_sweeps: :class:`int`
    :param schedule_info: Information about a annealing schedule.
-   :type schedule_info: dict
+   :type schedule_info: :class:`dict`
    :param num_reads: Number of iterations.
-   :type num_reads: int
+   :type num_reads: :class:`int`
    :param unit_num_L: Length of one side of two-dimensional lattice in which chimera unit cells are arranged.
-   :type unit_num_L: int
+   :type unit_num_L: :class:`int`
 
    :raises ValueError: If variables violate as below.
    :raises - trotter number is odd.:
@@ -106,30 +106,30 @@ Classes
 
    .. py:method:: sample(bqm: Union[openjij.model.model.BinaryQuadraticModel, dimod.BinaryQuadraticModel], beta: Optional[float] = None, gamma: Optional[float] = None, num_sweeps: Optional[int] = None, schedule: Optional[list] = None, trotter: Optional[int] = None, num_reads: Optional[int] = None, initial_state: Optional[Union[list, dict]] = None, updater: Optional[str] = None, sparse: Optional[bool] = None, reinitialize_state: Optional[bool] = None, seed: Optional[int] = None) -> openjij.sampler.response.Response
 
-      Sampling from the Ising model
+      Sampling from the Ising model.
 
       :param bqm:
-      :type bqm: openjij.BinaryQuadraticModel
+      :type bqm: :class:`openjij.BinaryQuadraticModel`
       :param beta: inverse tempareture.
-      :type beta: float, optional
+      :type beta: :class:`float, optional`
       :param gamma: strangth of transverse field. Defaults to None.
-      :type gamma: float, optional
+      :type gamma: :class:`float, optional`
       :param num_sweeps: number of sweeps. Defaults to None.
-      :type num_sweeps: int, optional
+      :type num_sweeps: :class:`int, optional`
       :param schedule: List of annealing parameter. Defaults to None.
-      :type schedule: list[list[float, int]], optional
+      :type schedule: :class:`list[list[float, int]], optional`
       :param trotter: Trotter number.
-      :type trotter: int
+      :type trotter: :class:`int`
       :param num_reads: number of sampling. Defaults to 1.
-      :type num_reads: int, optional
+      :type num_reads: :class:`int, optional`
       :param initial_state: Initial state. Defaults to None.
-      :type initial_state: list[int], optional
+      :type initial_state: :class:`list[int], optional`
       :param updater: update method. Defaults to 'single spin flip'.
-      :type updater: str, optional
+      :type updater: :class:`str, optional`
       :param reinitialize_state: Re-initilization at each sampling. Defaults to True.
-      :type reinitialize_state: bool, optional
+      :type reinitialize_state: :class:`bool, optional`
       :param seed: Sampling seed. Defaults to None.
-      :type seed: int, optional
+      :type seed: :class:`int, optional`
 
       :raises ValueError:
 
@@ -154,30 +154,30 @@ Classes
 
    .. py:method:: sample_ising(h, J, beta=None, gamma=None, num_sweeps=None, schedule=None, num_reads=None, unit_num_L=None, initial_state=None, updater=None, reinitialize_state=True, seed=None)
 
-      Sampling from the Ising model
+      Sampling from the Ising model.
 
       :param h: Linear term of the target Ising model.
-      :type h: dict
+      :type h: :class:`dict`
       :param J: Quadratic term of the target Ising model.
-      :type J: dict
+      :type J: :class:`dict`
       :param beta: inverse tempareture.
-      :type beta: float, optional
+      :type beta: :class:`float, optional`
       :param gamma: strangth of transverse field. Defaults to None.
-      :type gamma: float, optional
+      :type gamma: :class:`float, optional`
       :param num_sweeps: number of sweeps. Defaults to None.
-      :type num_sweeps: int, optional
+      :type num_sweeps: :class:`int, optional`
       :param schedule: List of annealing parameter. Defaults to None.
-      :type schedule: list[list[float, int]], optional
+      :type schedule: :class:`list[list[float, int]], optional`
       :param num_reads: number of sampling. Defaults to 1.
-      :type num_reads: int, optional
+      :type num_reads: :class:`int, optional`
       :param initial_state: Initial state. Defaults to None.
-      :type initial_state: list[int], optional
+      :type initial_state: :class:`list[int], optional`
       :param updater: update method. Defaults to 'single spin flip'.
-      :type updater: str, optional
+      :type updater: :class:`str, optional`
       :param reinitialize_state: Re-initilization at each sampling. Defaults to True.
-      :type reinitialize_state: bool, optional
+      :type reinitialize_state: :class:`bool, optional`
       :param seed: Sampling seed. Defaults to None.
-      :type seed: int, optional
+      :type seed: :class:`int, optional`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -195,7 +195,7 @@ Classes
       Sample from a QUBO model using the implemented sample method.
 
       :param Q: Coefficients of a quadratic unconstrained binary optimization
-      :type Q: dict or numpy.ndarray
+      :type Q: :class:`dict or numpy.ndarray`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`

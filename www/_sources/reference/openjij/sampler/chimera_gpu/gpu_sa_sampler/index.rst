@@ -29,17 +29,17 @@ Classes
    Inherits from :class:`openjij.sampler.sampler.BaseSampler`.
 
    :param beta_min: Minimum inverse temperature.
-   :type beta_min: float
+   :type beta_min: :class:`float`
    :param beta_max: Maximum inverse temperature.
-   :type beta_max: float
+   :type beta_max: :class:`float`
    :param num_sweeps: Length of Monte Carlo step.
-   :type num_sweeps: int
+   :type num_sweeps: :class:`int`
    :param schedule_info: Information about a annealing schedule.
-   :type schedule_info: dict
+   :type schedule_info: :class:`dict`
    :param num_reads: Number of iterations.
-   :type num_reads: int
+   :type num_reads: :class:`int`
    :param unit_num_L: Length of one side of two-dimensional lattice in which chimera unit cells are arranged.
-   :type unit_num_L: int
+   :type unit_num_L: :class:`int`
 
    :raises ValueError: If variables violate as below.
    :raises - trotter number is odd.:
@@ -104,28 +104,28 @@ Classes
 
    .. py:method:: sample(bqm: Union[openj.model.model.BinaryQuadraticModel, dimod.BinaryQuadraticModel], beta_min: Optional[float] = None, beta_max: Optional[float] = None, num_sweeps: Optional[int] = None, num_reads: Optional[int] = None, schedule: Optional[list] = None, initial_state: Optional[Union[list, dict]] = None, updater: Optional[str] = None, sparse: Optional[bool] = None, reinitialize_state: Optional[bool] = None, seed: Optional[int] = None) -> openjij.sampler.response.Response
 
-      sample Ising model.
+      Sample Ising model.
 
       :param bqm:
-      :type bqm: openjij.model.model.BinaryQuadraticModel
+      :type bqm: :class:`openjij.model.model.BinaryQuadraticModel`
       :param beta_min: minimal value of inverse temperature
-      :type beta_min: float
+      :type beta_min: :class:`float`
       :param beta_max: maximum value of inverse temperature
-      :type beta_max: float
+      :type beta_max: :class:`float`
       :param num_sweeps: number of sweeps
-      :type num_sweeps: int
+      :type num_sweeps: :class:`int`
       :param num_reads: number of reads
-      :type num_reads: int
+      :type num_reads: :class:`int`
       :param schedule: list of inverse temperature
-      :type schedule: list
+      :type schedule: :class:`list`
       :param initial_state: initial state
-      :type initial_state: dict
+      :type initial_state: :class:`dict`
       :param updater: updater algorithm
-      :type updater: str
+      :type updater: :class:`str`
       :param reinitialize_state: if true reinitialize state for each run
-      :type reinitialize_state: bool
+      :type reinitialize_state: :class:`bool`
       :param seed: seed for Monte Carlo algorithm
-      :type seed: int
+      :type seed: :class:`int`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -148,28 +148,28 @@ Classes
 
    .. py:method:: sample_hubo(J: Union[dict, openj.model.model.BinaryPolynomialModel, cimod.BinaryPolynomialModel], vartype: Optional[str] = None, beta_min: Optional[float] = None, beta_max: Optional[float] = None, num_sweeps: Optional[int] = None, num_reads: Optional[int] = None, schedule: Optional[list] = None, initial_state: Optional[Union[list, dict]] = None, updater: Optional[str] = None, reinitialize_state: Optional[bool] = None, seed: Optional[int] = None) -> openjij.sampler.response.Response
 
-      sampling from higher order unconstrainted binary optimization.
+      Sampling from higher order unconstrainted binary optimization.
 
       :param J: Interactions.
-      :type J: dict
+      :type J: :class:`dict`
       :param vartype: "SPIN" or "BINARY".
-      :type vartype: str, openjij.VarType
+      :type vartype: :class:`str, openjij.VarType`
       :param beta_min: Minimum beta (initial inverse temperature). Defaults to None.
-      :type beta_min: float, optional
+      :type beta_min: :class:`float, optional`
       :param beta_max: Maximum beta (final inverse temperature). Defaults to None.
-      :type beta_max: float, optional
+      :type beta_max: :class:`float, optional`
       :param schedule: schedule list. Defaults to None.
-      :type schedule: list, optional
+      :type schedule: :class:`list, optional`
       :param num_sweeps: number of sweeps. Defaults to None.
-      :type num_sweeps: int, optional
+      :type num_sweeps: :class:`int, optional`
       :param num_reads: number of reads. Defaults to 1.
-      :type num_reads: int, optional
+      :type num_reads: :class:`int, optional`
       :param init_state: initial state. Defaults to None.
-      :type init_state: list, optional
+      :type init_state: :class:`list, optional`
       :param reinitialize_state: if true reinitialize state for each run
-      :type reinitialize_state: bool
+      :type reinitialize_state: :class:`bool`
       :param seed: seed for Monte Carlo algorithm. Defaults to None.
-      :type seed: int, optional
+      :type seed: :class:`int, optional`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -188,32 +188,32 @@ Classes
 
    .. py:method:: sample_ising(h, J, beta_min=None, beta_max=None, num_sweeps=None, num_reads=1, schedule=None, initial_state=None, updater=None, reinitialize_state=True, seed=None, unit_num_L=None)
 
-      sample with Ising model.
+      Sample with Ising model.
 
       :param h: linear biases
-      :type h: dict
+      :type h: :class:`dict`
       :param J: quadratic biases
-      :type J: dict
+      :type J: :class:`dict`
       :param beta_min: minimal value of inverse temperature
-      :type beta_min: float
+      :type beta_min: :class:`float`
       :param beta_max: maximum value of inverse temperature
-      :type beta_max: float
+      :type beta_max: :class:`float`
       :param num_sweeps: number of sweeps
-      :type num_sweeps: int
+      :type num_sweeps: :class:`int`
       :param num_reads: number of reads
-      :type num_reads: int
+      :type num_reads: :class:`int`
       :param schedule: list of inverse temperature
-      :type schedule: list
+      :type schedule: :class:`list`
       :param initial_state: initial state
-      :type initial_state: dict
+      :type initial_state: :class:`dict`
       :param updater: updater algorithm
-      :type updater: str
+      :type updater: :class:`str`
       :param reinitialize_state: if true reinitialize state for each run
-      :type reinitialize_state: bool
+      :type reinitialize_state: :class:`bool`
       :param seed: seed for Monte Carlo algorithm
-      :type seed: int
+      :type seed: :class:`int`
       :param unit_num_L: number of chimera units
-      :type unit_num_L: int
+      :type unit_num_L: :class:`int`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -226,13 +226,12 @@ Classes
           >>> res = sampler.sample_ising(h, J)
 
 
-
    .. py:method:: sample_qubo(Q, **parameters)
 
       Sample from a QUBO model using the implemented sample method.
 
       :param Q: Coefficients of a quadratic unconstrained binary optimization
-      :type Q: dict or numpy.ndarray
+      :type Q: :class:`dict or numpy.ndarray`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`

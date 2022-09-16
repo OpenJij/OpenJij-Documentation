@@ -55,6 +55,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/_modules/openjij/model/chimera_model.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -109,14 +110,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -528,6 +521,8 @@ title="Open an issue"
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
 
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
 <span class="kn">from</span> <span class="nn">dimod</span> <span class="kn">import</span> <span class="n">SPIN</span>
 
 <span class="kn">import</span> <span class="nn">openjij.cxxjij</span> <span class="k">as</span> <span class="nn">cj</span>
@@ -541,11 +536,13 @@ title="Open an issue"
 <span class="sd">    Returns:</span>
 <span class="sd">        generated ChimeraModel class</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    
     <span class="k">class</span> <span class="nc">ChimeraModel</span><span class="p">(</span><span class="n">make_BinaryQuadraticModel</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span> <span class="n">quadratic</span><span class="p">)):</span>
-        <span class="sd">&quot;&quot;&quot;Binary quadnratic model dealing with chimera graph</span>
-<span class="sd">        This model deal with chimera graph.</span>
-<span class="sd">        ChimeraModel provide methods to verify whether a given interaction graph matches a Chimera graph and to convert it to cxxjij.graph.Chimera.</span>
+        <span class="sd">&quot;&quot;&quot;Binary quadnratic model dealing with chimera graph This model deal</span>
+
+<span class="sd">        with chimera graph. ChimeraModel provide methods to verify whether a</span>
+<span class="sd">        given interaction graph matches a Chimera graph and to convert it to</span>
+<span class="sd">        cxxjij.graph.Chimera.</span>
 
 <span class="sd">        Examples::</span>
 <span class="sd">            # This interactions satisfy chimera topology.</span>
@@ -553,9 +550,9 @@ title="Open an issue"
 <span class="sd">            &gt;&gt;&gt; chimera_model = ChimeraModel(Q, unit_num_L=2)  # make</span>
 <span class="sd">            &gt;&gt;&gt; chimera_self.validate_chimera()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
+        
         <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span>
+                <span class="bp">self</span><span class="p">,</span>
             <span class="n">linear</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">quadratic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">offset</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
@@ -588,10 +585,10 @@ title="Open an issue"
             <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">coordinate</span> <span class="o">==</span> <span class="s2">&quot;chimera coordinate&quot;</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_chimera_index</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">L</span><span class="p">:</span> <span class="n">i</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_to_index</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">L</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_index</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
-
+        
         <span class="k">def</span> <span class="nf">_validate_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
-            <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            Check if the type of indices is valid.</span>
+            <span class="sd">&quot;&quot;&quot;Check if the type of indices is valid.</span>
+
 <span class="sd">            Args:</span>
 <span class="sd">                indices (list(int) or list(tuple))</span>
 <span class="sd">            Return:</span>
@@ -608,8 +605,7 @@ title="Open an issue"
             <span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">validate_chimera</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            Check if the Chimera connectivity is valid.</span>
+            <span class="sd">&quot;&quot;&quot;Check if the Chimera connectivity is valid.</span>
 
 <span class="sd">            Chimera coordinate: r, c, z</span>
 <span class="sd">            One dimension coordinate: i</span>
@@ -671,6 +667,7 @@ title="Open an issue"
         <span class="k">def</span> <span class="nf">to_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">unit_num_L</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            Chimera coordinate: r, c, i</span>
+
 <span class="sd">            One dimension coordinate: i</span>
 <span class="sd">            Relation: i = 8*L*r + 8*c + i</span>
 <span class="sd">            Args:</span>
@@ -683,6 +680,7 @@ title="Open an issue"
 
         <span class="k">def</span> <span class="nf">chimera_coordinate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">unit_num_L</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;Convert 1-d index to chimera corrdinate</span>
+
 <span class="sd">            Args:</span>
 <span class="sd">                i (int): 1-D index 0~L*L*8-1</span>
 <span class="sd">                unit_num_L (int): number of chimera grid size</span>
@@ -696,6 +694,7 @@ title="Open an issue"
 
         <span class="k">def</span> <span class="nf">get_cxxjij_ising_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;Get cxxjij.graph.Chimera type instance</span>
+
 <span class="sd">            Args:</span>
 <span class="sd">                i (int): 1-D index 0~L*L*8-1</span>
 <span class="sd">                unit_num_L (int): number of chimera grid size</span>
@@ -714,33 +713,31 @@ title="Open an issue"
                 <span class="n">chimera</span> <span class="o">=</span> <span class="n">cj</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Chimera</span><span class="p">(</span><span class="n">chimera_L</span><span class="p">,</span> <span class="n">chimera_L</span><span class="p">)</span>
 
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">hi</span> <span class="ow">in</span> <span class="n">_h</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">,</span> <span class="n">zi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chimera_index</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">chimera_L</span><span class="p">)</span>
+                <span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">,</span> <span class="n">zi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chimera_index</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">chimera_L</span><span class="p">)</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_validate</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">chimera_L</span><span class="p">):</span>
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                        <span class="s2">&quot;Problem graph incompatible with chimera graph. Node </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                            <span class="n">i</span>
-                        <span class="p">)</span>
-                    <span class="p">)</span>
+                            <span class="s2">&quot;Problem graph incompatible with chimera graph. Node </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                    <span class="n">i</span>
+                                    <span class="p">)</span>
+                            <span class="p">)</span>
                 <span class="n">chimera</span><span class="p">[</span><span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">,</span> <span class="n">zi</span><span class="p">]</span> <span class="o">=</span> <span class="n">hi</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="n">Jij</span> <span class="ow">in</span> <span class="n">_J</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">,</span> <span class="n">zi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chimera_index</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">chimera_L</span><span class="p">)</span>
-                <span class="n">r_j</span><span class="p">,</span> <span class="n">c_j</span><span class="p">,</span> <span class="n">zj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chimera_index</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">chimera_L</span><span class="p">)</span>
-
+                <span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">,</span> <span class="n">zi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chimera_index</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">chimera_L</span><span class="p">)</span>
+                <span class="n">r_j</span><span class="p">,</span> <span class="n">c_j</span><span class="p">,</span> <span class="n">zj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chimera_index</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">chimera_L</span><span class="p">)</span>
+    
                 <span class="c1"># validate connection</span>
-                <span class="n">error_msg</span> <span class="o">=</span> <span class="s2">&quot;In the </span><span class="si">{}</span><span class="s2">*</span><span class="si">{}</span><span class="s2"> Chimera grid, &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chimera_L</span><span class="p">,</span> <span class="n">chimera_L</span><span class="p">)</span>
-                <span class="n">error_msg</span> <span class="o">+=</span> <span class="p">(</span>
-                    <span class="s2">&quot;there is no connection between node </span><span class="si">{}</span><span class="s2"> and node </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
-                <span class="p">)</span>
+                <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;In the </span><span class="si">{</span><span class="n">chimera_L</span><span class="si">}</span><span class="s2">*</span><span class="si">{</span><span class="n">chimera_L</span><span class="si">}</span><span class="s2"> Chimera grid, &quot;</span>
+                <span class="n">error_msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;there is no connection between node </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> and node </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">.&quot;</span>
                 <span class="n">linear_vldt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_validate</span><span class="p">(</span>
-                    <span class="n">i</span><span class="p">,</span> <span class="n">chimera_L</span>
-                <span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_validate</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">chimera_L</span><span class="p">)</span>
+                        <span class="n">i</span><span class="p">,</span> <span class="n">chimera_L</span>
+                        <span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_validate</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">chimera_L</span><span class="p">)</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span>
-                    <span class="n">linear_vldt</span>
-                    <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">((</span><span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">,</span> <span class="n">zi</span><span class="p">),</span> <span class="p">(</span><span class="n">r_j</span><span class="p">,</span> <span class="n">c_j</span><span class="p">,</span> <span class="n">zj</span><span class="p">),</span> <span class="n">chimera_L</span><span class="p">)</span>
+                        <span class="n">linear_vldt</span>
+                        <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">((</span><span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">,</span> <span class="n">zi</span><span class="p">),</span> <span class="p">(</span><span class="n">r_j</span><span class="p">,</span> <span class="n">c_j</span><span class="p">,</span> <span class="n">zj</span><span class="p">),</span> <span class="n">chimera_L</span><span class="p">)</span>
                 <span class="p">):</span>
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                        <span class="s2">&quot;Problem graph incompatible with chimera graph.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">error_msg</span>
-                    <span class="p">)</span>
+                            <span class="s2">&quot;Problem graph incompatible with chimera graph.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">error_msg</span>
+                            <span class="p">)</span>
 
                 <span class="k">if</span> <span class="n">r_i</span> <span class="o">==</span> <span class="n">r_j</span> <span class="ow">and</span> <span class="n">c_i</span> <span class="o">==</span> <span class="n">c_j</span><span class="p">:</span>
                     <span class="c1"># connection in Chimera unit cell</span>
@@ -765,7 +762,7 @@ title="Open an issue"
             <span class="k">return</span> <span class="n">chimera</span>
 
         <span class="k">def</span> <span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">convert_sample</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-            <span class="sd">&quot;&quot;&quot;calc energy of the BinaryQuadraticModel.</span>
+            <span class="sd">&quot;&quot;&quot;Calc energy of the BinaryQuadraticModel.</span>
 
 <span class="sd">            Args:</span>
 <span class="sd">                sample: samples</span>
@@ -775,11 +772,12 @@ title="Open an issue"
 
         <span class="k">def</span> <span class="nf">energies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samples_like</span><span class="p">,</span> <span class="n">convert_sample</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">energies</span><span class="p">(</span>
-                <span class="n">sample_like</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">convert_sample</span><span class="o">=</span><span class="n">convert_sample</span>
-            <span class="p">)</span>
+                    <span class="n">samples_like</span><span class="p">,</span> <span class="n">sparse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">convert_sample</span> <span class="o">=</span> <span class="n">convert_sample</span>
+                    <span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcz1</span><span class="p">,</span> <span class="n">rcz2</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;Check if the connectivity is valid.</span>
+
 <span class="sd">            Args:</span>
 <span class="sd">                rcz1 (int), rcz2(int), L(int)</span>
 <span class="sd">            Returns:</span>
@@ -800,6 +798,7 @@ title="Open an issue"
 
         <span class="k">def</span> <span class="nf">_index_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;Check if the index is valid.</span>
+
 <span class="sd">            Args:</span>
 <span class="sd">                i(int), L(int)</span>
 <span class="sd">            Returns:</span>
@@ -815,7 +814,7 @@ title="Open an issue"
 
 
 <div class="viewcode-block" id="make_ChimeraModel_from_JSON"><a class="viewcode-back" href="../../../reference/openjij/model/chimera_model/index.html#openjij.model.chimera_model.make_ChimeraModel_from_JSON">[docs]</a><span class="k">def</span> <span class="nf">make_ChimeraModel_from_JSON</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;make ChimeraModel from JSON.</span>
+    <span class="sd">&quot;&quot;&quot;Make ChimeraModel from JSON.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        corresponding ChimeraModel type</span>
@@ -831,17 +830,19 @@ title="Open an issue"
 
 
 <div class="viewcode-block" id="ChimeraModel"><a class="viewcode-back" href="../../../reference/openjij/model/chimera_model/index.html#openjij.model.chimera_model.ChimeraModel">[docs]</a><span class="k">def</span> <span class="nf">ChimeraModel</span><span class="p">(</span>
-    <span class="n">linear</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">quadratic</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">offset</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-    <span class="n">vartype</span><span class="o">=</span><span class="n">SPIN</span><span class="p">,</span>
-    <span class="n">unit_num_L</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;generate ChimeraModel object.</span>
+        <span class="n">linear</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">quadratic</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">offset</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">vartype</span> <span class="o">=</span> <span class="n">SPIN</span><span class="p">,</span>
+        <span class="n">unit_num_L</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate ChimeraModel object</span>
+
 <span class="sd">    This model deal with chimera graph.</span>
-<span class="sd">    ChimeraModel provide methods to verify whether a given interaction graph matches a Chimera graph and to convert it to cxxjij.graph.Chimera.</span>
+<span class="sd">    ChimeraModel provide methods to verify whether a given interaction graph</span>
+<span class="sd">    matches a Chimera graph and to convert it to cxxjij.graph.Chimera.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        linear (dict): linear biases</span>
@@ -861,7 +862,6 @@ title="Open an issue"
 <span class="sd">            &gt;&gt;&gt; Q={(0, 4): -1, (4, 12): -1}</span>
 <span class="sd">            &gt;&gt;&gt; chimera_model = ChimeraModel(Q, unit_num_L=2)  # make</span>
 <span class="sd">            &gt;&gt;&gt; chimera_self.validate_chimera()</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">Model</span> <span class="o">=</span> <span class="n">make_ChimeraModel</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span> <span class="n">quadratic</span><span class="p">)</span>

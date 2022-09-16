@@ -56,6 +56,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/reference/openjij/model/chimera_model/index.html" />
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -112,14 +113,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -700,13 +693,13 @@ title="Print to PDF"
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#openjij.model.chimera_model.ChimeraModel" title="openjij.model.chimera_model.ChimeraModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChimeraModel</span></code></a>([linear, quadratic, offset, vartype, ...])</p></td>
-<td><p>generate ChimeraModel object.</p></td>
+<td><p>Generate ChimeraModel object</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#openjij.model.chimera_model.make_ChimeraModel" title="openjij.model.chimera_model.make_ChimeraModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_ChimeraModel</span></code></a>(linear, quadratic)</p></td>
 <td><p>ChimeraModel factory.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#openjij.model.chimera_model.make_ChimeraModel_from_JSON" title="openjij.model.chimera_model.make_ChimeraModel_from_JSON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_ChimeraModel_from_JSON</span></code></a>(obj)</p></td>
-<td><p>make ChimeraModel from JSON.</p></td>
+<td><p>Make ChimeraModel from JSON.</p></td>
 </tr>
 </tbody>
 </table>
@@ -748,19 +741,20 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.model.chimera_model.ChimeraModel">
 <span class="sig-prename descclassname"><span class="pre">openjij.model.chimera_model.</span></span><span class="sig-name descname"><span class="pre">ChimeraModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">linear</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><span class="pre">dict</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadratic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><span class="pre">dict</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vartype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SPIN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_num_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/openjij/model/chimera_model.html#ChimeraModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.model.chimera_model.ChimeraModel" title="Permalink to this definition">#</a></dt>
-<dd><p>generate ChimeraModel object.
-This model deal with chimera graph.
-ChimeraModel provide methods to verify whether a given interaction graph matches a Chimera graph and to convert it to cxxjij.graph.Chimera.</p>
+<dd><p>Generate ChimeraModel object</p>
+<p>This model deal with chimera graph.
+ChimeraModel provide methods to verify whether a given interaction graph
+matches a Chimera graph and to convert it to cxxjij.graph.Chimera.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>linear</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – linear biases</p></li>
-<li><p><strong>quadratic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – quadratic biases</p></li>
-<li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – offset</p></li>
+<li><p><strong>linear</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – linear biases</p></li>
+<li><p><strong>quadratic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – quadratic biases</p></li>
+<li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – offset</p></li>
 <li><p><strong>vartype</strong> – vartype (‘SPIN’ or ‘BINARY’)</p></li>
-<li><p><strong>unit_num_L</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – unit_num_L</p></li>
-<li><p><strong>model</strong> (<em>BinaryQuadraticModel</em>) – if model is not None, the object is initialized by model.</p></li>
-<li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – if true, this can be used for gpu samplers.</p></li>
+<li><p><strong>unit_num_L</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – unit_num_L</p></li>
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">BinaryQuadraticModel</span></code>) – if model is not None, the object is initialized by model.</p></li>
+<li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – if true, this can be used for gpu samplers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -791,7 +785,7 @@ ChimeraModel provide methods to verify whether a given interaction graph matches
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.model.chimera_model.make_ChimeraModel_from_JSON">
 <span class="sig-prename descclassname"><span class="pre">openjij.model.chimera_model.</span></span><span class="sig-name descname"><span class="pre">make_ChimeraModel_from_JSON</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/openjij/model/chimera_model.html#make_ChimeraModel_from_JSON"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.model.chimera_model.make_ChimeraModel_from_JSON" title="Permalink to this definition">#</a></dt>
-<dd><p>make ChimeraModel from JSON.</p>
+<dd><p>Make ChimeraModel from JSON.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>corresponding ChimeraModel type</p>

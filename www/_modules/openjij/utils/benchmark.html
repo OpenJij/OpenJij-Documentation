@@ -55,6 +55,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/_modules/openjij/utils/benchmark.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -109,14 +110,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -528,6 +521,7 @@ title="Open an issue"
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
 
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
 
 <span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">getLogger</span>
@@ -548,6 +542,7 @@ title="Open an issue"
     <span class="n">time_name</span><span class="o">=</span><span class="s2">&quot;execution_time&quot;</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculate &#39;success probability&#39;, &#39;TTS&#39;, &#39;Residual energy&#39;,&#39;Standard Error&#39; with computation time</span>
+
 <span class="sd">    Args:</span>
 <span class="sd">        solver (callable): returns openjij.Response, and solver has arguments &#39;time&#39; and &#39;**args&#39;</span>
 <span class="sd">        time_list (list):</span>
@@ -568,7 +563,6 @@ title="Open an issue"
 <span class="sd">        * **se_success_prob**: list of success probability&#39;s standard error at each computation time</span>
 <span class="sd">        * **se_residual_energy**: list of residual_energy&#39;s standard error at each computation time</span>
 <span class="sd">        * **info** (dict): Parameter information for the benchmark</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">measure_with_energy</span><span class="p">:</span>
@@ -628,18 +622,19 @@ title="Open an issue"
 
 <div class="viewcode-block" id="residual_energy"><a class="viewcode-back" href="../../../reference/openjij/utils/index.html#openjij.residual_energy">[docs]</a><span class="k">def</span> <span class="nf">residual_energy</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">ref_energy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculate redisual energy from measure energy</span>
+
 <span class="sd">    Args:</span>
 <span class="sd">        response (openjij.Response): response from solver (or sampler).</span>
 <span class="sd">        ref_energy (float): the reference energy (usually use the ground energy)</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        float: Residual energy which is defined as :math:`\\langle E \\rangle - E_0` (:math:`\\langle...\\rangle` represents average, :math:`E_0` is the reference energy (usually use the ground energy)).</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">energies</span><span class="p">)</span> <span class="o">-</span> <span class="n">ref_energy</span></div>
 
 
 <div class="viewcode-block" id="se_residual_energy"><a class="viewcode-back" href="../../../reference/openjij/utils/index.html#openjij.se_residual_energy">[docs]</a><span class="k">def</span> <span class="nf">se_residual_energy</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">ref_energy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculate redisual energy&#39;s standard error from measure energy</span>
+
 <span class="sd">    Args:</span>
 <span class="sd">        response (openjij.Response): response from solver (or sampler).</span>
 <span class="sd">        ref_energy (float): the reference energy (usually use the ground energy)</span>
@@ -651,6 +646,7 @@ title="Open an issue"
 
 <div class="viewcode-block" id="success_probability"><a class="viewcode-back" href="../../../reference/openjij/utils/index.html#openjij.success_probability">[docs]</a><span class="k">def</span> <span class="nf">success_probability</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">solutions</span><span class="p">,</span> <span class="n">ref_energy</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">measure_with_energy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculate success probability from openjij.response</span>
+
 <span class="sd">    Args:</span>
 <span class="sd">        response (openjij.Response): response from solver (or sampler).</span>
 <span class="sd">        solutions (list[int]): true solutions.</span>
@@ -659,7 +655,6 @@ title="Open an issue"
 
 <span class="sd">        * When measure_with_energy is False, success is defined as getting the same state as solutions.</span>
 <span class="sd">        * When measure_with_energy is True, success is defined as getting a state which energy is below reference energy</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">measure_with_energy</span><span class="p">:</span>
@@ -685,6 +680,7 @@ title="Open an issue"
     <span class="n">response</span><span class="p">,</span> <span class="n">solutions</span><span class="p">,</span> <span class="n">ref_energy</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">measure_with_energy</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculate success probability&#39;s standard error from openjij.response</span>
+
 <span class="sd">    Args:</span>
 <span class="sd">        response (openjij.Response): response from solver (or sampler).</span>
 <span class="sd">        solutions (list[int]): true solutions.</span>
@@ -693,7 +689,6 @@ title="Open an issue"
 
 <span class="sd">        * When measure_with_energy is False, success is defined as getting the same state as solutions.</span>
 <span class="sd">        * When measure_with_energy is True, success is defined as getting a state which energy is below reference energy</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">measure_with_energy</span><span class="p">:</span>
@@ -719,6 +714,7 @@ title="Open an issue"
 <div class="viewcode-block" id="time_to_solution"><a class="viewcode-back" href="../../../reference/openjij/utils/index.html#openjij.time_to_solution">[docs]</a><span class="k">def</span> <span class="nf">time_to_solution</span><span class="p">(</span><span class="n">success_prob</span><span class="p">,</span> <span class="n">computation_time</span><span class="p">,</span> <span class="n">p_r</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
+
 <span class="sd">        success_prob (float): success probability.</span>
 <span class="sd">        computation_time (float):</span>
 <span class="sd">        p_r (float): thereshold probability to calculate time to solution.</span>
@@ -739,6 +735,7 @@ title="Open an issue"
 <div class="viewcode-block" id="se_lower_tts"><a class="viewcode-back" href="../../../reference/openjij/utils/index.html#openjij.se_lower_tts">[docs]</a><span class="k">def</span> <span class="nf">se_lower_tts</span><span class="p">(</span><span class="n">tts</span><span class="p">,</span> <span class="n">success_prob</span><span class="p">,</span> <span class="n">computation_time</span><span class="p">,</span> <span class="n">p_r</span><span class="p">,</span> <span class="n">se_success_prob</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
+
 <span class="sd">        success_prob (float): success probability.</span>
 <span class="sd">        computation_time (float):</span>
 <span class="sd">        p_r (float): thereshold probability to calculate time to solution.</span>
@@ -765,6 +762,7 @@ title="Open an issue"
 <div class="viewcode-block" id="se_upper_tts"><a class="viewcode-back" href="../../../reference/openjij/utils/index.html#openjij.se_upper_tts">[docs]</a><span class="k">def</span> <span class="nf">se_upper_tts</span><span class="p">(</span><span class="n">tts</span><span class="p">,</span> <span class="n">success_prob</span><span class="p">,</span> <span class="n">computation_time</span><span class="p">,</span> <span class="n">p_r</span><span class="p">,</span> <span class="n">se_success_prob</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
+
 <span class="sd">        success_prob (float): success probability.</span>
 <span class="sd">        computation_time (float):</span>
 <span class="sd">        p_r (float): thereshold probability to calculate time to solution.</span>

@@ -55,6 +55,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/_modules/openjij/model/model.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -109,14 +110,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -527,8 +520,7 @@ title="Open an issue"
 <span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">| This module defines the BinaryQuadraticModel with the Hamiltonian,</span>
+<span class="sd">&quot;&quot;&quot;| This module defines the BinaryQuadraticModel with the Hamiltonian,</span>
 
 <span class="sd">.. math::</span>
 
@@ -542,9 +534,8 @@ title="Open an issue"
 
 <span class="sd">| in a QUBO form.</span>
 <span class="sd">| The methods and usage are basically the same as `dimod &lt;https://github.com/dwavesystems/dimod&gt;`_.</span>
-
 <span class="sd">&quot;&quot;&quot;</span>
-
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 <span class="kn">import</span> <span class="nn">cimod</span>
 <span class="kn">import</span> <span class="nn">cimod.cxxcimod</span> <span class="k">as</span> <span class="nn">cxxcimod</span>
 <span class="kn">import</span> <span class="nn">dimod</span>
@@ -563,7 +554,8 @@ title="Open an issue"
         <span class="n">cimod</span><span class="o">.</span><span class="n">make_BinaryQuadraticModel</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span> <span class="n">quadratic</span><span class="p">,</span> <span class="n">sparse</span><span class="p">)</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Represents Binary quadratic model.</span>
-<span class="sd">           Indices are listed in self.indices.</span>
+
+<span class="sd">        Indices are listed in self.indices.</span>
 <span class="sd">        Attributes:</span>
 <span class="sd">            vartype (dimod.Vartype): variable type SPIN or BINARY</span>
 <span class="sd">            linear (dict): represents linear term</span>
@@ -591,7 +583,7 @@ title="Open an issue"
             <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span> <span class="o">=</span> <span class="s2">&quot;openjij.BinaryQuadraticModel&quot;</span>
 
         <span class="k">def</span> <span class="nf">get_cxxjij_ising_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="sd">&quot;&quot;&quot;generate cxxjij Ising graph from the interactions.</span>
+            <span class="sd">&quot;&quot;&quot;Generate cxxjij Ising graph from the interactions.</span>
 
 <span class="sd">            Returns:</span>
 <span class="sd">                cxxjij.graph.Dense or cxxjij.graph.Sparse:</span>
@@ -641,7 +633,7 @@ title="Open an issue"
 
 
 <div class="viewcode-block" id="make_BinaryQuadraticModel_from_JSON"><a class="viewcode-back" href="../../../reference/openjij/model/model/index.html#openjij.make_BinaryQuadraticModel_from_JSON">[docs]</a><span class="k">def</span> <span class="nf">make_BinaryQuadraticModel_from_JSON</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;make BinaryQuadraticModel from JSON.</span>
+    <span class="sd">&quot;&quot;&quot;Make BinaryQuadraticModel from JSON.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        corresponding BinaryQuadraticModel type</span>
@@ -664,7 +656,7 @@ title="Open an issue"
 
 
 <div class="viewcode-block" id="BinaryQuadraticModel"><a class="viewcode-back" href="../../../reference/openjij/model/model/index.html#openjij.BinaryQuadraticModel">[docs]</a><span class="k">def</span> <span class="nf">BinaryQuadraticModel</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span> <span class="n">quadratic</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;generate BinaryQuadraticModel object.</span>
+    <span class="sd">&quot;&quot;&quot;Generate BinaryQuadraticModel object.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        vartype (dimod.Vartype): variable type SPIN or BINARY</span>

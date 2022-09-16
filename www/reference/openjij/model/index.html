@@ -56,6 +56,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/reference/openjij/model/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -112,14 +113,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -797,7 +790,7 @@ title="Print to PDF"
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#openjij.model.BinaryQuadraticModel" title="openjij.model.BinaryQuadraticModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryQuadraticModel</span></code></a>(linear, quadratic, *args, **kwargs)</p></td>
-<td><p>generate BinaryQuadraticModel object.</p></td>
+<td><p>Generate BinaryQuadraticModel object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#openjij.model.bqm_from_numpy_matrix" title="openjij.model.bqm_from_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bqm_from_numpy_matrix</span></code></a>(mat[, variables, offset, vartype])</p></td>
 <td><p></p></td>
@@ -827,14 +820,14 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.model.BinaryQuadraticModel">
 <span class="sig-prename descclassname"><span class="pre">openjij.model.</span></span><span class="sig-name descname"><span class="pre">BinaryQuadraticModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">linear</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadratic</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/openjij/model/model.html#BinaryQuadraticModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.model.BinaryQuadraticModel" title="Permalink to this definition">#</a></dt>
-<dd><p>generate BinaryQuadraticModel object.</p>
+<dd><p>Generate BinaryQuadraticModel object.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="openjij.model.vartype">
 <span class="sig-prename descclassname"><span class="pre">openjij.model.</span></span><span class="sig-name descname"><span class="pre">vartype</span></span><a class="headerlink" href="#openjij.model.vartype" title="Permalink to this definition">#</a></dt>
 <dd><p>variable type SPIN or BINARY</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/docs_dimod/reference/vartypes.html#dimod.Vartype" title="(in Ocean Documentation v5.3.0)">dimod.Vartype</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.ocean.dwavesys.com/en/stable/docs_dimod/reference/vartypes.html#dimod.Vartype" title="(in Ocean Documentation v5.4.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dimod.Vartype</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -845,7 +838,7 @@ title="Print to PDF"
 <dd><p>represents linear term</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -856,7 +849,7 @@ title="Print to PDF"
 <dd><p>represents quadratic term</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -867,7 +860,7 @@ title="Print to PDF"
 <dd><p>represents constant energy term when convert to SPIN from BINARY</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -878,7 +871,7 @@ title="Print to PDF"
 <dd><p>represents number of variables in the model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -889,7 +882,7 @@ title="Print to PDF"
 <dd><p>represents variables of the binary quadratic model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -897,11 +890,11 @@ title="Print to PDF"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>linear</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – linear biases</p></li>
-<li><p><strong>quadratic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – quadratic biases</p></li>
-<li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – offset</p></li>
-<li><p><strong>vartype</strong> (<em>openjij.variable_type.Vartype</em>) – vartype (‘SPIN’ or ‘BINARY’)</p></li>
-<li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – if true, this can be used for gpu samplers.</p></li>
+<li><p><strong>linear</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – linear biases</p></li>
+<li><p><strong>quadratic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – quadratic biases</p></li>
+<li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – offset</p></li>
+<li><p><strong>vartype</strong> (<a class="reference internal" href="../variable_type/index.html#openjij.variable_type.Vartype" title="openjij.variable_type.Vartype"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.variable_type.Vartype</span></code></a>) – vartype (‘SPIN’ or ‘BINARY’)</p></li>
+<li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – if true, this can be used for gpu samplers.</p></li>
 <li><p><strong>kwargs</strong> – </p></li>
 </ul>
 </dd>

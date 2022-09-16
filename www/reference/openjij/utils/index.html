@@ -56,6 +56,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/reference/openjij/utils/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -112,14 +113,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -793,17 +786,19 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.utils.residual_energy">
 <span class="sig-prename descclassname"><span class="pre">openjij.utils.</span></span><span class="sig-name descname"><span class="pre">residual_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_energy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/openjij/utils/benchmark.html#residual_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.utils.residual_energy" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculate redisual energy from measure energy
-:param response: response from solver (or sampler).
-:type response: openjij.Response
-:param ref_energy: the reference energy (usually use the ground energy)
-:type ref_energy: float</p>
+<dd><p>Calculate redisual energy from measure energy</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Residual energy which is defined as <span class="math"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><mi>E</mi><mo stretchy="false">⟩</mo><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\langle E \rangle - E_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> (<span class="math"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">\langle...\rangle</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord">...</span><span class="mclose">⟩</span></span></span></span></span> represents average, <span class="math"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> is the reference energy (usually use the ground energy)).</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response</strong> (<a class="reference internal" href="../index.html#openjij.Response" title="openjij.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.Response</span></code></a>) – response from solver (or sampler).</p></li>
+<li><p><strong>ref_energy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – the reference energy (usually use the ground energy)</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Residual energy which is defined as <span class="math"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><mi>E</mi><mo stretchy="false">⟩</mo><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\langle E \rangle - E_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> (<span class="math"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">\langle...\rangle</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord">...</span><span class="mclose">⟩</span></span></span></span></span> represents average, <span class="math"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> is the reference energy (usually use the ground energy)).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -814,9 +809,9 @@ title="Print to PDF"
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>success_prob</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – success probability.</p></li>
-<li><p><strong>computation_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – </p></li>
-<li><p><strong>p_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – thereshold probability to calculate time to solution.</p></li>
+<li><p><strong>success_prob</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – success probability.</p></li>
+<li><p><strong>computation_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – </p></li>
+<li><p><strong>p_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – thereshold probability to calculate time to solution.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -831,17 +826,19 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.utils.se_residual_energy">
 <span class="sig-prename descclassname"><span class="pre">openjij.utils.</span></span><span class="sig-name descname"><span class="pre">se_residual_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_energy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/openjij/utils/benchmark.html#se_residual_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.utils.se_residual_energy" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculate redisual energy’s standard error from measure energy
-:param response: response from solver (or sampler).
-:type response: openjij.Response
-:param ref_energy: the reference energy (usually use the ground energy)
-:type ref_energy: float</p>
+<dd><p>Calculate redisual energy’s standard error from measure energy</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>redisual energy’s standard error from measure energy</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response</strong> (<a class="reference internal" href="../index.html#openjij.Response" title="openjij.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.Response</span></code></a>) – response from solver (or sampler).</p></li>
+<li><p><strong>ref_energy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – the reference energy (usually use the ground energy)</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>redisual energy’s standard error from measure energy</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -849,22 +846,24 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.utils.se_success_probability">
 <span class="sig-prename descclassname"><span class="pre">openjij.utils.</span></span><span class="sig-name descname"><span class="pre">se_success_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure_with_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/openjij/utils/benchmark.html#se_success_probability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.utils.se_success_probability" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculate success probability’s standard error from openjij.response
-:param response: response from solver (or sampler).
-:type response: openjij.Response
-:param solutions: true solutions.
-:type solutions: list[int]</p>
+<dd><p>Calculate success probability’s standard error from openjij.response</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>Success probability’s standard error.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response</strong> (<a class="reference internal" href="../index.html#openjij.Response" title="openjij.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.Response</span></code></a>) – response from solver (or sampler).</p></li>
+<li><p><strong>solutions</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[int]</span></code>) – true solutions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Success probability’s standard error.</p>
 <ul class="simple">
 <li><p>When measure_with_energy is False, success is defined as getting the same state as solutions.</p></li>
 <li><p>When measure_with_energy is True, success is defined as getting a state which energy is below reference energy</p></li>
 </ul>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -875,9 +874,9 @@ title="Print to PDF"
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>success_prob</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – success probability.</p></li>
-<li><p><strong>computation_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – </p></li>
-<li><p><strong>p_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – thereshold probability to calculate time to solution.</p></li>
+<li><p><strong>success_prob</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – success probability.</p></li>
+<li><p><strong>computation_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – </p></li>
+<li><p><strong>p_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – thereshold probability to calculate time to solution.</p></li>
 </ul>
 </dd>
 </dl>
@@ -890,24 +889,21 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.utils.solver_benchmark">
 <span class="sig-prename descclassname"><span class="pre">openjij.utils.</span></span><span class="sig-name descname"><span class="pre">solver_benchmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solutions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure_with_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'execution_time'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/openjij/utils/benchmark.html#solver_benchmark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.utils.solver_benchmark" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculate ‘success probability’, ‘TTS’, ‘Residual energy’,’Standard Error’ with computation time
-:param solver: returns openjij.Response, and solver has arguments ‘time’ and ‘<a href="#id1"><span class="problematic" id="id2">**</span></a>args’
-:type solver: callable
-:param time_list:
-:type time_list: list
-:param solutions: true solution or list of solution (if solutions are degenerated).
-:type solutions: list(list(int)), list(int)
-:param args: Arguments for solver.
-:type args: dict
-:param p_r: Thereshold probability for time to solutions.
-:type p_r: float
-:param ref_energy: The ground (reference to calculate success probability and the residual energy) energy.
-:type ref_energy: float
-:param measure_with_energy: use a energy as measure for success
-:type measure_with_energy: bool</p>
+<dd><p>Calculate ‘success probability’, ‘TTS’, ‘Residual energy’,’Standard Error’ with computation time</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>dictionary which has the following keys:</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solver</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">callable</span></code>) – returns openjij.Response, and solver has arguments ‘time’ and ‘<a href="#id1"><span class="problematic" id="id2">**</span></a>args’</p></li>
+<li><p><strong>time_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – </p></li>
+<li><p><strong>solutions</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list(list(int)),</span> <span class="pre">list(int)</span></code>) – true solution or list of solution (if solutions are degenerated).</p></li>
+<li><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Arguments for solver.</p></li>
+<li><p><strong>p_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Thereshold probability for time to solutions.</p></li>
+<li><p><strong>ref_energy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The ground (reference to calculate success probability and the residual energy) energy.</p></li>
+<li><p><strong>measure_with_energy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use a energy as measure for success</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>dictionary which has the following keys:</p>
 <ul class="simple">
 <li><p><strong>time</strong>: list of compuation time</p></li>
 <li><p><strong>success_prob</strong> list of success probability at each computation time</p></li>
@@ -921,8 +917,8 @@ title="Print to PDF"
 </ul>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -930,22 +926,24 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.utils.success_probability">
 <span class="sig-prename descclassname"><span class="pre">openjij.utils.</span></span><span class="sig-name descname"><span class="pre">success_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure_with_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/openjij/utils/benchmark.html#success_probability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.utils.success_probability" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculate success probability from openjij.response
-:param response: response from solver (or sampler).
-:type response: openjij.Response
-:param solutions: true solutions.
-:type solutions: list[int]</p>
+<dd><p>Calculate success probability from openjij.response</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>Success probability.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response</strong> (<a class="reference internal" href="../index.html#openjij.Response" title="openjij.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">openjij.Response</span></code></a>) – response from solver (or sampler).</p></li>
+<li><p><strong>solutions</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[int]</span></code>) – true solutions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Success probability.</p>
 <ul class="simple">
 <li><p>When measure_with_energy is False, success is defined as getting the same state as solutions.</p></li>
 <li><p>When measure_with_energy is True, success is defined as getting a state which energy is below reference energy</p></li>
 </ul>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -956,9 +954,9 @@ title="Print to PDF"
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>success_prob</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – success probability.</p></li>
-<li><p><strong>computation_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – </p></li>
-<li><p><strong>p_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – thereshold probability to calculate time to solution.</p></li>
+<li><p><strong>success_prob</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – success probability.</p></li>
+<li><p><strong>computation_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – </p></li>
+<li><p><strong>p_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – thereshold probability to calculate time to solution.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

@@ -24,7 +24,7 @@ Classes
    .. autoapi-inheritance-diagram:: openjij.sampler.chimera_gpu.base_gpu_chimera.BaseGPUChimeraSampler
       :parts: 1
 
-   Abstract GPUChimera Sampler
+   Abstract GPUChimera Sampler.
 
    .. py:method:: adjacency() -> Dict[dimod.typing.Variable, Set]
       :property:

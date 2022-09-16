@@ -23,13 +23,13 @@ Functions
    [summary]
 
    :param r: row index
-   :type r: int
+   :type r: :class:`int`
    :param c: column index
-   :type c: int
+   :type c: :class:`int`
    :param z: in-chimera index (must be from 0 to 7)
-   :type z: int
+   :type z: :class:`int`
    :param L: height and width of  chimera-units (total number of spins is :math:`L \times L \times 8`)
-   :type L: int
+   :type L: :class:`int`
 
    :raises ValueError: [description]
 
@@ -39,9 +39,9 @@ Functions
 
 .. py:function:: qubo_to_ising(mat: numpy.ndarray)
 
-   inplace-convert numpy matrix from qubo to ising.
+   Inplace-convert numpy matrix from qubo to ising.
 
    :param mat: numpy matrix
-   :type mat: np.ndarray
+   :type mat: :class:`np.ndarray`
 
 

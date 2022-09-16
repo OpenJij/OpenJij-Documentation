@@ -55,6 +55,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/_modules/openjij/sampler/sampler.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -109,14 +110,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -527,10 +520,8 @@ title="Open an issue"
 <span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This module defines the abstract sampler (BaseSampler).</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
+<span class="sd">&quot;&quot;&quot;This module defines the abstract sampler (BaseSampler).&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="kn">import</span> <span class="nn">dimod</span>
@@ -565,7 +556,7 @@ title="Open an issue"
 
 
 <div class="viewcode-block" id="BaseSampler"><a class="viewcode-back" href="../../../reference/openjij/sampler/sampler/index.html#openjij.sampler.BaseSampler">[docs]</a><span class="k">class</span> <span class="nc">BaseSampler</span><span class="p">(</span><span class="n">dimod</span><span class="o">.</span><span class="n">Sampler</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Base sampler class of python wrapper for cxxjij simulator&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Base sampler class of python wrapper for cxxjij simulator.&quot;&quot;&quot;</span>
 
     <span class="n">parameters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -592,7 +583,7 @@ title="Open an issue"
         <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Basic sampling function: for cxxjij sampling</span>
+        <span class="sd">&quot;&quot;&quot;Basic sampling function: for cxxjij sampling.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            model (openjij.BinaryQuadraticModel): model has a information of instaunce (h, J, Q)</span>
@@ -684,6 +675,7 @@ title="Open an issue"
 <div class="viewcode-block" id="BaseSampler.sample"><a class="viewcode-back" href="../../../reference/openjij/sampler/sampler/index.html#openjij.sampler.BaseSampler.sample">[docs]</a>    <span class="nd">@samplemixinmethod</span>
     <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bqm</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sample from a binary quadratic model.</span>
+
 <span class="sd">        Args:</span>
 <span class="sd">            bqm (openjij.BinaryQuadraticModel):</span>
 <span class="sd">                Binary Qudratic Model</span>

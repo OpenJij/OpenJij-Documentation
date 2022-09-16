@@ -55,6 +55,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/_modules/openjij/sampler/chimera_gpu/gpu_sqa_sampler.html" />
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -109,14 +110,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -528,7 +521,7 @@ title="Open an issue"
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
 
-
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 <span class="kn">import</span> <span class="nn">openjij</span>
 <span class="kn">import</span> <span class="nn">openjij</span> <span class="k">as</span> <span class="nn">oj</span>
 <span class="kn">import</span> <span class="nn">openjij.cxxjij</span> <span class="k">as</span> <span class="nn">cxxjij</span>
@@ -558,7 +551,6 @@ title="Open an issue"
 <span class="sd">        - given problem graph is incompatible with chimera graph.</span>
 
 <span class="sd">        AttributeError: If GPU doesn&#39;t work.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -611,7 +603,7 @@ title="Open an issue"
         <span class="n">reinitialize_state</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Sampling from the Ising model</span>
+        <span class="sd">&quot;&quot;&quot;Sampling from the Ising model.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            h (dict): Linear term of the target Ising model.</span>

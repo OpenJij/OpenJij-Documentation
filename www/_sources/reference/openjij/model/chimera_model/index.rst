@@ -46,23 +46,25 @@ Attributes
 
 .. py:function:: ChimeraModel(linear: dict = None, quadratic: dict = None, offset: float = 0.0, vartype=SPIN, unit_num_L: int = None, model=None, gpu: bool = False)
 
-   generate ChimeraModel object.
+   Generate ChimeraModel object
+
    This model deal with chimera graph.
-   ChimeraModel provide methods to verify whether a given interaction graph matches a Chimera graph and to convert it to cxxjij.graph.Chimera.
+   ChimeraModel provide methods to verify whether a given interaction graph
+   matches a Chimera graph and to convert it to cxxjij.graph.Chimera.
 
    :param linear: linear biases
-   :type linear: dict
+   :type linear: :class:`dict`
    :param quadratic: quadratic biases
-   :type quadratic: dict
+   :type quadratic: :class:`dict`
    :param offset: offset
-   :type offset: float
+   :type offset: :class:`float`
    :param vartype: vartype ('SPIN' or 'BINARY')
    :param unit_num_L: unit_num_L
-   :type unit_num_L: int
+   :type unit_num_L: :class:`int`
    :param model: if model is not None, the object is initialized by model.
-   :type model: BinaryQuadraticModel
+   :type model: :class:`BinaryQuadraticModel`
    :param gpu: if true, this can be used for gpu samplers.
-   :type gpu: bool
+   :type gpu: :class:`bool`
 
    :returns: generated ChimeraModel
 
@@ -85,7 +87,7 @@ Attributes
 
 .. py:function:: make_ChimeraModel_from_JSON(obj)
 
-   make ChimeraModel from JSON.
+   Make ChimeraModel from JSON.
 
    :returns: corresponding ChimeraModel type
 

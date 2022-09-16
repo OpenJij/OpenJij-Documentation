@@ -37,7 +37,7 @@ Functions
    .. autoapi-inheritance-diagram:: openjij.sampler.sampler.BaseSampler
       :parts: 1
 
-   Base sampler class of python wrapper for cxxjij simulator
+   Base sampler class of python wrapper for cxxjij simulator.
 
    .. py:attribute:: parameters
       
@@ -73,8 +73,9 @@ Functions
    .. py:method:: sample(bqm, **parameters)
 
       Sample from a binary quadratic model.
+
       :param bqm: Binary Qudratic Model
-      :type bqm: openjij.BinaryQuadraticModel
+      :type bqm: :class:`openjij.BinaryQuadraticModel`
       :param \*\*parameters: See the implemented sampling for additional keyword definitions.
 
       :returns: results
@@ -86,9 +87,9 @@ Functions
       Sample from an Ising model using the implemented sample method.
 
       :param h: Linear biases
-      :type h: dict
+      :type h: :class:`dict`
       :param J: Quadratic biases
-      :type J: dict
+      :type J: :class:`dict`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`
@@ -99,7 +100,7 @@ Functions
       Sample from a QUBO model using the implemented sample method.
 
       :param Q: Coefficients of a quadratic unconstrained binary optimization
-      :type Q: dict or numpy.ndarray
+      :type Q: :class:`dict or numpy.ndarray`
 
       :returns: results
       :rtype: :class:`openjij.sampler.response.Response`

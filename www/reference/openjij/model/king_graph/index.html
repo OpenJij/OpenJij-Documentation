@@ -56,6 +56,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://openjij.github.io/OpenJij-Documentation/reference/openjij/model/king_graph/index.html" />
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -112,14 +113,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../../../index.html">
-                    Welcome to OpenJij’s documentation!
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   OpenJij API Reference
@@ -700,7 +693,7 @@ title="Print to PDF"
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#openjij.model.king_graph.KingGraph" title="openjij.model.king_graph.KingGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KingGraph</span></code></a>([linear, quadratic, offset, king_graph, ...])</p></td>
-<td><p>generate KingGraph model.</p></td>
+<td><p>Generate KingGraph model.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#openjij.model.king_graph.make_KingGraph" title="openjij.model.king_graph.make_KingGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_KingGraph</span></code></a>([linear, quadratic, king_graph])</p></td>
 <td><p>KingGraph factory</p></td>
@@ -748,13 +741,13 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.model.king_graph.KingGraph">
 <span class="sig-prename descclassname"><span class="pre">openjij.model.king_graph.</span></span><span class="sig-name descname"><span class="pre">KingGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">linear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadratic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">king_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vartype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SPIN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">machine_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/openjij/model/king_graph.html#KingGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.model.king_graph.KingGraph" title="Permalink to this definition">#</a></dt>
-<dd><p>generate KingGraph model.</p>
+<dd><p>Generate KingGraph model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>linear</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – linear biases</p></li>
-<li><p><strong>quadratic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – quadratic biases</p></li>
-<li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – offset</p></li>
+<li><p><strong>linear</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – linear biases</p></li>
+<li><p><strong>quadratic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – quadratic biases</p></li>
+<li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – offset</p></li>
 <li><p><strong>king_graph</strong> – <p>represents ising or QUBO interaction.
 Each spins are decided by 2-d corrdinate x, y.</p>
 <ul>
@@ -763,7 +756,7 @@ Each spins are decided by 2-d corrdinate x, y.</p>
 </ul>
 </p></li>
 <li><p><strong>vartype</strong> – ‘SPIN’ or ‘BINARY’</p></li>
-<li><p><strong>machine_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – choose ‘ASIC’ or ‘FPGA’</p></li>
+<li><p><strong>machine_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – choose ‘ASIC’ or ‘FPGA’</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -787,19 +780,24 @@ Each spins are decided by 2-d corrdinate x, y.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.model.king_graph.make_KingGraph">
 <span class="sig-prename descclassname"><span class="pre">openjij.model.king_graph.</span></span><span class="sig-name descname"><span class="pre">make_KingGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">linear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadratic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">king_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/openjij/model/king_graph.html#make_KingGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.model.king_graph.make_KingGraph" title="Permalink to this definition">#</a></dt>
-<dd><p>KingGraph factory
-:returns: generated KingGraph class</p>
+<dd><p>KingGraph factory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>generated KingGraph class</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="openjij.model.king_graph.make_KingGraph_from_JSON">
 <span class="sig-prename descclassname"><span class="pre">openjij.model.king_graph.</span></span><span class="sig-name descname"><span class="pre">make_KingGraph_from_JSON</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/openjij/model/king_graph.html#make_KingGraph_from_JSON"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openjij.model.king_graph.make_KingGraph_from_JSON" title="Permalink to this definition">#</a></dt>
-<dd><p>KingGraph factory for JSON
-:param obj: JSON object
-:type obj: dict</p>
+<dd><p>KingGraph factory for JSON</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>generated KingGraph class</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – JSON object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>generated KingGraph class</p>
 </dd>
 </dl>
 </dd></dl>

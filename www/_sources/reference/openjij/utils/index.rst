@@ -44,10 +44,11 @@ Functions
 .. py:function:: residual_energy(response, ref_energy)
 
    Calculate redisual energy from measure energy
+
    :param response: response from solver (or sampler).
-   :type response: openjij.Response
+   :type response: :class:`openjij.Response`
    :param ref_energy: the reference energy (usually use the ground energy)
-   :type ref_energy: float
+   :type ref_energy: :class:`float`
 
    :returns: Residual energy which is defined as :math:`\langle E \rangle - E_0` (:math:`\langle...\rangle` represents average, :math:`E_0` is the reference energy (usually use the ground energy)).
    :rtype: float
@@ -56,11 +57,11 @@ Functions
 .. py:function:: se_lower_tts(tts, success_prob, computation_time, p_r, se_success_prob)
 
    :param success_prob: success probability.
-   :type success_prob: float
+   :type success_prob: :class:`float`
    :param computation_time:
-   :type computation_time: float
+   :type computation_time: :class:`float`
    :param p_r: thereshold probability to calculate time to solution.
-   :type p_r: float
+   :type p_r: :class:`float`
 
    :returns: time to solution :math:`\tau * \log(1-pr)/\log(1-ps)` 's standard error which pr is thereshold probability, ps is success probability and :math:`tau` is computation time.
    :rtype: float
@@ -69,10 +70,11 @@ Functions
 .. py:function:: se_residual_energy(response, ref_energy)
 
    Calculate redisual energy's standard error from measure energy
+
    :param response: response from solver (or sampler).
-   :type response: openjij.Response
+   :type response: :class:`openjij.Response`
    :param ref_energy: the reference energy (usually use the ground energy)
-   :type ref_energy: float
+   :type ref_energy: :class:`float`
 
    :returns: redisual energy's standard error from measure energy
    :rtype: float
@@ -81,10 +83,11 @@ Functions
 .. py:function:: se_success_probability(response, solutions, ref_energy=0, measure_with_energy=False)
 
    Calculate success probability's standard error from openjij.response
+
    :param response: response from solver (or sampler).
-   :type response: openjij.Response
+   :type response: :class:`openjij.Response`
    :param solutions: true solutions.
-   :type solutions: list[int]
+   :type solutions: :class:`list[int]`
 
    :returns: Success probability's standard error.
 
@@ -96,11 +99,11 @@ Functions
 .. py:function:: se_upper_tts(tts, success_prob, computation_time, p_r, se_success_prob)
 
    :param success_prob: success probability.
-   :type success_prob: float
+   :type success_prob: :class:`float`
    :param computation_time:
-   :type computation_time: float
+   :type computation_time: :class:`float`
    :param p_r: thereshold probability to calculate time to solution.
-   :type p_r: float
+   :type p_r: :class:`float`
 
    Returens:
        float: time to solution :math:`\tau * \log(1-pr)/\log(1-ps)` 's standard error which pr is thereshold probability, ps is success probability and :math:`tau` is computation time.
@@ -109,20 +112,21 @@ Functions
 .. py:function:: solver_benchmark(solver, time_list, solutions=[], args={}, p_r=0.99, ref_energy=0, measure_with_energy=False, time_name='execution_time')
 
    Calculate 'success probability', 'TTS', 'Residual energy','Standard Error' with computation time
+
    :param solver: returns openjij.Response, and solver has arguments 'time' and '**args'
-   :type solver: callable
+   :type solver: :class:`callable`
    :param time_list:
-   :type time_list: list
+   :type time_list: :class:`list`
    :param solutions: true solution or list of solution (if solutions are degenerated).
-   :type solutions: list(list(int)), list(int)
+   :type solutions: :class:`list(list(int)), list(int)`
    :param args: Arguments for solver.
-   :type args: dict
+   :type args: :class:`dict`
    :param p_r: Thereshold probability for time to solutions.
-   :type p_r: float
+   :type p_r: :class:`float`
    :param ref_energy: The ground (reference to calculate success probability and the residual energy) energy.
-   :type ref_energy: float
+   :type ref_energy: :class:`float`
    :param measure_with_energy: use a energy as measure for success
-   :type measure_with_energy: bool
+   :type measure_with_energy: :class:`bool`
 
    :returns: dictionary which has the following keys:
 
@@ -141,10 +145,11 @@ Functions
 .. py:function:: success_probability(response, solutions, ref_energy=0, measure_with_energy=False)
 
    Calculate success probability from openjij.response
+
    :param response: response from solver (or sampler).
-   :type response: openjij.Response
+   :type response: :class:`openjij.Response`
    :param solutions: true solutions.
-   :type solutions: list[int]
+   :type solutions: :class:`list[int]`
 
    :returns: Success probability.
 
@@ -156,11 +161,11 @@ Functions
 .. py:function:: time_to_solution(success_prob, computation_time, p_r)
 
    :param success_prob: success probability.
-   :type success_prob: float
+   :type success_prob: :class:`float`
    :param computation_time:
-   :type computation_time: float
+   :type computation_time: :class:`float`
    :param p_r: thereshold probability to calculate time to solution.
-   :type p_r: float
+   :type p_r: :class:`float`
 
    :returns: time to solution :math:`\tau * \log(1-pr)/\log(1-ps)` which pr is thereshold probability, ps is success probability and :math:`tau` is computation time.
    :rtype: float

@@ -46,14 +46,14 @@ Attributes
 
 .. py:function:: KingGraph(linear=None, quadratic=None, offset=0.0, king_graph=None, vartype=SPIN, machine_type='')
 
-   generate KingGraph model.
+   Generate KingGraph model.
 
    :param linear: linear biases
-   :type linear: dict
+   :type linear: :class:`dict`
    :param quadratic: quadratic biases
-   :type quadratic: dict
+   :type quadratic: :class:`dict`
    :param offset: offset
-   :type offset: float
+   :type offset: :class:`float`
    :param king_graph: represents ising or QUBO interaction.
                       Each spins are decided by 2-d corrdinate x, y.
 
@@ -61,7 +61,7 @@ Attributes
                       * Linear term:    [x1, y1, x1, y1, value]
    :param vartype: 'SPIN' or 'BINARY'
    :param machine_type: choose 'ASIC' or 'FPGA'
-   :type machine_type: str
+   :type machine_type: :class:`str`
 
    :returns: generated KingGraphModel
 
@@ -82,14 +82,16 @@ Attributes
 .. py:function:: make_KingGraph(linear=None, quadratic=None, king_graph=None)
 
    KingGraph factory
+
    :returns: generated KingGraph class
 
 
 .. py:function:: make_KingGraph_from_JSON(obj)
 
    KingGraph factory for JSON
+
    :param obj: JSON object
-   :type obj: dict
+   :type obj: :class:`dict`
 
    :returns: generated KingGraph class
 
