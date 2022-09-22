@@ -357,8 +357,18 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../../../tutorial/en/003-JijModeling_with_OpenJij.html">
+   1. 3-JijModeling with OpenJij
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../tutorial/en/006-Machine_Learning_by_QA.html">
+   2. 6-Machine Learning (QBoost) with Quantum Annealing
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../../tutorial/en/index.html">
-   1. OpenJij Tutorials
+   3. OpenJij Tutorials
   </a>
  </li>
 </ul>
@@ -531,7 +541,6 @@ title="Open an issue"
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 <span class="kn">from</span> <span class="nn">dimod</span> <span class="kn">import</span> <span class="n">SPIN</span>
 
 <span class="kn">import</span> <span class="nn">openjij</span>
@@ -542,7 +551,6 @@ title="Open an issue"
 
 <div class="viewcode-block" id="make_KingGraph"><a class="viewcode-back" href="../../../reference/openjij/model/king_graph/index.html#openjij.model.king_graph.make_KingGraph">[docs]</a><span class="k">def</span> <span class="nf">make_KingGraph</span><span class="p">(</span><span class="n">linear</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quadratic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">king_graph</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;KingGraph factory</span>
-
 <span class="sd">    Returns:</span>
 <span class="sd">        generated KingGraph class</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -565,7 +573,6 @@ title="Open an issue"
     <span class="k">class</span> <span class="nc">KingGraph</span><span class="p">(</span><span class="n">make_BinaryQuadraticModel</span><span class="p">(</span><span class="n">mock_linear</span><span class="p">,</span> <span class="n">mock_quadratic</span><span class="p">)):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        BQM for king graph of HITACHI CMOS Annealer</span>
-
 <span class="sd">        Attributes:</span>
 <span class="sd">            xrange (list(int)): represents hardware (CMOS) restricts for coordinate. [xmin, xmax]</span>
 <span class="sd">            yrange (list(int)): represents hardware (CMOS) restricts for coordinate. [ymin, ymax]</span>
@@ -698,7 +705,6 @@ title="Open an issue"
 
 <div class="viewcode-block" id="make_KingGraph_from_JSON"><a class="viewcode-back" href="../../../reference/openjij/model/king_graph/index.html#openjij.model.king_graph.make_KingGraph_from_JSON">[docs]</a><span class="k">def</span> <span class="nf">make_KingGraph_from_JSON</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;KingGraph factory for JSON</span>
-
 <span class="sd">    Args:</span>
 <span class="sd">        obj (dict): JSON object</span>
 <span class="sd">    Returns:</span>
@@ -722,7 +728,7 @@ title="Open an issue"
     <span class="n">vartype</span><span class="o">=</span><span class="n">SPIN</span><span class="p">,</span>
     <span class="n">machine_type</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate KingGraph model.</span>
+    <span class="sd">&quot;&quot;&quot;generate KingGraph model.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        linear (dict): linear biases</span>

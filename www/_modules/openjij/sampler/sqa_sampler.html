@@ -357,8 +357,18 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../../../tutorial/en/003-JijModeling_with_OpenJij.html">
+   1. 3-JijModeling with OpenJij
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../tutorial/en/006-Machine_Learning_by_QA.html">
+   2. 6-Machine Learning (QBoost) with Quantum Annealing
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../../tutorial/en/index.html">
-   1. OpenJij Tutorials
+   3. OpenJij Tutorials
   </a>
  </li>
 </ul>
@@ -517,8 +527,7 @@ title="Open an issue"
               <div>
                 
   <h1>Source code for openjij.sampler.sqa_sampler</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-<span class="k">try</span><span class="p">:</span>
+<span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
@@ -562,6 +571,7 @@ title="Open an issue"
 <span class="sd">        ValueError: If the schedule violates as below.</span>
 <span class="sd">        - not list or numpy.array.</span>
 <span class="sd">        - schedule range is &#39;0 &lt;= s &lt;= 1&#39;.</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@property</span>
@@ -687,7 +697,7 @@ title="Open an issue"
         <span class="n">reinitialize_state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">seed</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;openjij.sampler.response.Response&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Sampling from the Ising model.</span>
+        <span class="sd">&quot;&quot;&quot;Sampling from the Ising model</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            bqm (openjij.BinaryQuadraticModel) binary quadratic model</span>
@@ -859,10 +869,7 @@ title="Open an issue"
 
 
 <div class="viewcode-block" id="quartic_ising_schedule"><a class="viewcode-back" href="../../../reference/openjij/sampler/sqa_sampler/index.html#openjij.quartic_ising_schedule">[docs]</a><span class="k">def</span> <span class="nf">quartic_ising_schedule</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">num_sweeps</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate quartic ising schedule based on S</span>
-
-<span class="sd">    Morita and H. Nishimori,</span>
-<span class="sd">    Journal of Mathematical Physics 49, 125210 (2008).</span>
+    <span class="sd">&quot;&quot;&quot;Generate quartic ising schedule based on S. Morita and H. Nishimori, Journal of Mathematical Physics 49, 125210 (2008).</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        model (:class:`openjij.model.model.BinaryQuadraticModel`): BinaryQuadraticModel</span>
